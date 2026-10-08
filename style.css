@@ -22,6 +22,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    text-align: center;
 }
 
 img {
@@ -70,7 +71,6 @@ nav a {
     font-size: 0.95rem;
     color: #444;
     transition: 0.3s;
-    text-align: center;
 }
 
 nav a:hover {
