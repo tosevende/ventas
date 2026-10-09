@@ -22,7 +22,6 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    text-align: center;
 }
 
 img {
@@ -59,7 +58,6 @@ header .container {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-    text-align: center;
 }
 
 nav {
