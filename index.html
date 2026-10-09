@@ -3,126 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TO' SE VENDE</title>
-<link rel="stylesheet" href="style.css">
+
+    <title>TO’ SE VENDE | Tu tienda online</title>
+    <meta name="description" content="Descubre nuestra selección de productos para tu día a día.">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- ENCABEZADO -->
-<header>
-    <div class="logo">
-        <img src="img/logo.jpeg" alt="Logo TO' SE VENDE" class="logo" />
-        <span class="titulo">TO' SE VENDE</span>
-    </div>
-    
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="#categorias">Categorías</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-</header>
-<!-- PORTADA -->
-<main>
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-small">DESCUBRE NUESTRA SELECCIÓN</p>
-            <h1>
-                Productos para<br>
-                tu día a día
-            </h1>
-            <p>
-                Encuentra accesorios de gimnasio, equipos
-                y productos seleccionados para ti.
-            </p>
-            <a href="#categorias" class="button">
-                Ver productos
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="container">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="images/logo.png"
+                    alt="Logo de TO’ SE VENDE"
+                    class="logo-img"
+                >
+                <span>TO’ SE VENDE</span>
             </a>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#productos">Productos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
         </div>
-    </section>
-    <!-- CATEGORÍAS -->
-    <section id="categorias" class="categories">
-        <div class="section-title">
-            <p>EXPLORA</p>
-            <h2>Categorías</h2>
-        </div>
-        <div class="category-grid">
-            <!-- GIMNASIO -->
-            <a href="gimnasio.html" class="category-card">
-                <div class="category-image">
-                    <img src="images/gimnasio.jpg" alt="Productos de gimnasio">
+    </header>
+
+
+    <!-- PORTADA PRINCIPAL -->
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+
+                <h2>Bienvenido a TO’ SE VENDE</h2>
+
+                <h1>Productos para tu día a día</h1>
+
+                <p>
+                    Descubre nuestra selección de artículos,
+                    encuentra lo que necesitas y consulta
+                    nuestros productos disponibles.
+                </p>
+
+                <a href="#productos" class="btn">
+                    Ver productos
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- CATEGORÍAS -->
+        <section id="categorias">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Explora nuestras categorías</h2>
+                    <p>Encuentra fácilmente lo que estás buscando.</p>
                 </div>
-                <div class="category-info">
-                    <span>01</span>
-                    <h3>Gimnasio</h3>
-                    <p>
-                        Ropa y accesorios para tus entrenamientos.
-                    </p>
-                    <strong>Ver productos →</strong>
+
+                <div class="categories">
+
+                    <a href="gimnasio.html" class="category-card">
+                        <img
+                            src="images/gimnasio.jpg"
+                            alt="Productos de gimnasio"
+                        >
+
+                        <div class="category-overlay">
+                            <h3>Gimnasio</h3>
+                            <p>Ropa y accesorios para tus entrenamientos.</p>
+                        </div>
+                    </a>
+
+                    <a href="equipos.html" class="category-card">
+                        <img
+                            src="images/equipos.jpg"
+                            alt="Equipos y herramientas"
+                        >
+
+                        <div class="category-overlay">
+                            <h3>Equipos</h3>
+                            <p>Herramientas, equipos y productos útiles.</p>
+                        </div>
+                    </a>
+
                 </div>
-            </a>
-            <!-- EQUIPOS -->
-            <a href="equipos.html" class="category-card">
-                <div class="category-image">
-                    <img src="images/equipos.jpg" alt="Equipos y herramientas">
+            </div>
+        </section>
+
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <section id="productos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Productos destacados</h2>
+                    <p>Una selección de nuestros productos.</p>
                 </div>
-                <div class="category-info">
-                    <span>02</span>
-                    <h3>Equipos</h3>
-                    <p>
-                        Herramientas, equipos y productos útiles.
-                    </p>
-                    <strong>Ver productos →</strong>
+
+                <div class="products">
+
+                    <article class="product-card">
+                        <img
+                            src="images/producto1.jpg"
+                            alt="Producto destacado 1"
+                        >
+
+                        <div class="product-info">
+                            <h3>Producto destacado</h3>
+                            <p class="price">Consultar precio</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img
+                            src="images/producto2.jpg"
+                            alt="Producto destacado 2"
+                        >
+
+                        <div class="product-info">
+                            <h3>Producto destacado</h3>
+                            <p class="price">Consultar precio</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img
+                            src="images/producto3.jpg"
+                            alt="Producto destacado 3"
+                        >
+
+                        <div class="product-info">
+                            <h3>Producto destacado</h3>
+                            <p class="price">Consultar precio</p>
+                        </div>
+                    </article>
+
                 </div>
-            </a>
-        </div>
-    </section>
-    <!-- PRODUCTOS DESTACADOS -->
-    <section class="featured">
-        <div class="section-title">
-            <p>SELECCIÓN</p>
-            <h2>Productos destacados</h2>
-        </div>
-        <div class="products-grid">
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="images/producto-1.jpg" alt="Producto destacado">
+            </div>
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>¿Te interesa algún producto?</h2>
                 </div>
-                <h3>Producto</h3>
-                <p>Descripción breve</p>
-                <strong>$00.00</strong>
-            </article>
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="images/producto-2.jpg" alt="Producto destacado">
-                </div>
-                <h3>Producto</h3>
-                <p>Descripción breve</p>
-                <strong>$00.00</strong>
-            </article>
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="images/producto-3.jpg" alt="Producto destacado">
-                </div>
-                <h3>Producto</h3>
-                <p>Descripción breve</p>
-                <strong>$00.00</strong>
-            </article>
-        </div>
-    </section>
-    <!-- CONTACTO -->
-    <section id="contacto" class="contact">
-        <h2>¿Tienes alguna pregunta?</h2>
-        <p>
-            Escríbenos y te ayudaremos a encontrar lo que buscas.
-        </p>
-        <a href="#" class="button">
-            Contactar por WhatsApp
-        </a>
-    </section>
-</main>
-<!-- PIE DE PÁGINA -->
-<footer>
-    <p>© 2026 TO' SE VENDE. Todos los derechos reservados.</p>
-</footer>
-<script src="script.js"></script>
+
+                <p>
+                    Escríbenos para consultar disponibilidad,
+                    precios y detalles de nuestros productos.
+                </p>
+
+                <a href="#" class="btn">
+                    Contáctanos
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>© 2026 TO’ SE VENDE. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
