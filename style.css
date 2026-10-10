@@ -386,3 +386,306 @@ footer {
    }
 
 }
+
+/* =========================================
+   PÁGINA DE CATEGORÍA: GIMNASIO
+   Estos estilos solo afectan a gimnasio.html
+========================================= */
+
+.gym-page {
+    --gym-azul: #102f78;
+    --gym-rojo: #d71932;
+    --gym-crema: #f7f2ec;
+    --gym-texto: #242424;
+    --gym-gris: #737373;
+
+    color: var(--gym-texto);
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gym-page *,
+.gym-page *::before,
+.gym-page *::after {
+    box-sizing: border-box;
+}
+
+.gym-page a {
+    text-decoration: none;
+}
+
+/* Contenedor */
+
+.gym-page .gym-container {
+    width: 92%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* Cabecera */
+
+.gym-page .gym-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.gym-page .gym-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+.gym-page .gym-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gym-azul);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.gym-page .gym-brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.gym-page .back-home {
+    color: var(--gym-azul);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+/* Presentación */
+
+.gym-page .gym-intro {
+    padding: 38px 0 24px;
+    background: var(--gym-crema);
+    text-align: center;
+}
+
+.gym-page .gym-eyebrow {
+    margin: 0 0 10px;
+    color: #a45e5b;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.gym-page .gym-intro h1 {
+    margin: 0 0 12px;
+    color: var(--gym-azul);
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.gym-page .gym-intro p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Enlaces de sección */
+
+.gym-page .gym-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 24px 0;
+}
+
+.gym-page .gym-filters a {
+    padding: 10px 16px;
+    border: 1px solid #e4dfda;
+    border-radius: 30px;
+    background: #fff;
+    color: var(--gym-azul);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.gym-page .gym-filters a:hover {
+    background: var(--gym-azul);
+    color: #fff;
+}
+
+/* Secciones */
+
+.gym-page .gym-section {
+    padding: 12px 0 38px;
+    scroll-margin-top: 20px;
+}
+
+.gym-page .gym-section-title {
+    margin-bottom: 22px;
+}
+
+.gym-page .gym-section-title h2 {
+    margin: 0 0 7px;
+    color: var(--gym-azul);
+    font-size: 1.55rem;
+}
+
+.gym-page .gym-section-title p {
+    margin: 0;
+    color: var(--gym-gris);
+    line-height: 1.5;
+}
+
+/* Productos */
+
+.gym-page .gym-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.gym-page .gym-product {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #eee8e2;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(20, 35, 60, 0.05);
+}
+
+.gym-page .gym-product-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
+    padding: 10px;
+    object-fit: contain;
+    background: #f8f6f3;
+}
+
+.gym-page .gym-product-info {
+    padding: 16px;
+}
+
+.gym-page .gym-product-info h3 {
+    margin: 0 0 8px;
+    color: #242424;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.gym-page .gym-price {
+    margin: 0 0 13px;
+    color: var(--gym-azul);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.gym-page .gym-detail {
+    margin: 7px 0;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.gym-page .gym-detail strong {
+    color: #292929;
+}
+
+/* Botón de WhatsApp */
+
+.gym-page .gym-whatsapp {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 10px;
+    border-radius: 9px;
+    background: var(--gym-azul);
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.gym-page .gym-whatsapp:hover {
+    background: var(--gym-rojo);
+}
+
+/* Aviso de disponibilidad */
+
+.gym-page .gym-note {
+    margin: 0 0 28px;
+    padding: 15px;
+    border-left: 4px solid var(--gym-rojo);
+    border-radius: 5px;
+    background: var(--gym-crema);
+    color: #555;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Pie de página */
+
+.gym-page .gym-footer {
+    margin-top: 15px;
+    padding: 25px 0;
+    background: var(--gym-azul);
+    color: #fff;
+    text-align: center;
+}
+
+.gym-page .gym-footer p {
+    margin: 6px 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.gym-page .gym-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Tabletas y móviles */
+
+@media (max-width: 760px) {
+    .gym-page .gym-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .gym-page .gym-product-info {
+        padding: 12px;
+    }
+
+    .gym-page .gym-product-info h3 {
+        font-size: 0.96rem;
+    }
+
+    .gym-page .gym-price {
+        font-size: 1.15rem;
+    }
+
+    .gym-page .gym-intro {
+        padding: 30px 0 25px;
+    }
+}
+
+@media (max-width: 380px) {
+    .gym-page .gym-products {
+        grid-template-columns: 1fr;
+    }
+
+    .gym-page .gym-header-inner {
+        align-items: flex-start;
+    }
+
+    .gym-page .gym-brand {
+        font-size: 1rem;
+    }
+
+    .gym-page .gym-brand img {
+        width: 38px;
+        height: 38px;
+    }
+}
