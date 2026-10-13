@@ -1066,33 +1066,7 @@ footer {
     color: #ffffff;
 }
 
-/* BANNER DE AVISO */
 
-.product-detail-page .detail-note {
-    display: block;
-    margin-top: 12px;
-    padding: 13px 15px;
-
-    background-color: #f7f2ec;
-    color: #454545;
-    border: 1px solid #e5d9cd;
-    border-left: 4px solid #d71932;
-    border-radius: 7px;
-
-    font-size: 0.84rem;
-    line-height: 1.6;
-}
-
-/* Asegurar la legibilidad del texto dentro del aviso */
-
-.product-detail-page .detail-note p {
-    color: #454545;
-}
-
-.product-detail-page .detail-note a {
-    color: #102f78;
-    text-decoration: underline;
-}
 
 /* Móviles y tabletas */
 
