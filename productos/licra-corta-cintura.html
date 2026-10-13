@@ -1,1 +1,204 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Licra corta corte V | TO’ SE VENDE</title>
+    <meta name="description" content="Licras cortas deportivas de corte V. Consulta colores, talla y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/gimnasio.html">
+                ← Volver a gimnasio
+            </a>
+
+        </div>
+    </header>
+
+
+    <main class="detail-container">
+
+        <section class="product-detail">
+
+            <!-- FOTO DEL PRODUCTO -->
+            <div class="detail-gallery">
+                <img
+                    src="../img/licras-cortas.jpg"
+                    alt="Licras cortas deportivas de corte V en diferentes colores"
+                    class="detail-main-image"
+                >
+            </div>
+
+
+            <!-- INFORMACIÓN DEL PRODUCTO -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">ROPA DEPORTIVA</p>
+
+                <h1>Licras cortas deportivas corte V</h1>
+
+                <p class="detail-price">9 USD</p>
+
+                <p class="detail-description">
+                    Licras deportivas cómodas y versátiles,
+                    ideales para tus entrenamientos y para
+                    acompañarte en tu día a día.
+                </p>
+
+
+                <!-- COLORES -->
+                <div class="detail-option">
+                    <h2>Colores disponibles</h2>
+
+                    <p class="selected-color">
+                        Selecciona un color para consultar
+                    </p>
+
+                    <div class="color-options">
+
+                        <button
+                            type="button"
+                            class="color-circle color-rosa"
+                            data-color="Rosa"
+                            aria-label="Rosa"
+                            title="Rosa"
+                        ></button>
+
+                        <button
+                            type="button"
+                            class="color-circle color-morado"
+                            data-color="Morado"
+                            aria-label="Morado"
+                            title="Morado"
+                        ></button>
+
+                        <button
+                            type="button"
+                            class="color-circle color-azul"
+                            data-color="Azul"
+                            aria-label="Azul"
+                            title="Azul"
+                        ></button>
+
+                        <button
+                            type="button"
+                            class="color-circle color-beige"
+                            data-color="Beige"
+                            aria-label="Beige"
+                            title="Beige"
+                        ></button>
+
+                        <button
+                            type="button"
+                            class="color-circle color-negro"
+                            data-color="Negro"
+                            aria-label="Negro"
+                            title="Negro"
+                        ></button>
+
+                    </div>
+                </div>
+
+
+                <!-- TALLA -->
+                <div class="detail-option">
+                    <h2>Talla disponible</h2>
+
+                    <div class="size-options">
+                        <span class="size-selected">S</span>
+                    </div>
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <a
+                    href="#"
+                    class="detail-whatsapp"
+                    id="whatsapp-product"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+                <p class="detail-note">
+                    Confirma la disponibilidad del color antes de realizar tu compra.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="detail-footer">
+        <div class="detail-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+
+    <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
+    <script>
+        const colorButtons = document.querySelectorAll(".color-circle");
+        const selectedColorText = document.querySelector(".selected-color");
+        const whatsappButton = document.getElementById("whatsapp-product");
+
+        let selectedColor = "";
+
+        // Sustituye este número por el WhatsApp de tu negocio.
+        // Incluye el código del país, sin +, espacios ni guiones.
+        const whatsappNumber = "TU_NUMERO_DE_WHATSAPP";
+
+        function updateWhatsApp() {
+            const message =
+                "Hola, estoy interesada en las licras cortas deportivas corte V. " +
+                "Precio: 9 USD. Talla: S. " +
+                "Color: " + (selectedColor || "por confirmar") +
+                ". ¿Está disponible?";
+
+            whatsappButton.href =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(message);
+        }
+
+        colorButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                colorButtons.forEach((item) => {
+                    item.classList.remove("is-selected");
+                    item.removeAttribute("aria-pressed");
+                });
+
+                button.classList.add("is-selected");
+                button.setAttribute("aria-pressed", "true");
+
+                selectedColor = button.dataset.color;
+                selectedColorText.textContent = "Color seleccionado: " + selectedColor;
+
+                updateWhatsApp();
+            });
+        });
+
+        updateWhatsApp();
+    </script>
+
+</body>
+</html>
