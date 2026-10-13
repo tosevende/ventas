@@ -1037,38 +1037,61 @@ footer {
     font-weight: 700;
 }
 
-/* Botón */
+/* BOTÓN DE WHATSAPP */
 
-.product-detail-page .detail-whatsapp {
+.product-detail-page a.detail-whatsapp {
     display: block;
     width: 100%;
     margin-top: 28px;
     padding: 14px 18px;
+
+    background-color: #102f78;
+    color: #ffffff;
+    border: 2px solid #102f78;
     border-radius: 9px;
-    background: var(--detail-blue);
-    color: #fff;
+
     text-align: center;
+    text-decoration: none;
     font-size: 0.98rem;
     font-weight: 700;
-    transition: background 0.2s;
+    line-height: 1.5;
+
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.product-detail-page .detail-whatsapp:hover {
-    background: var(--detail-red);
+.product-detail-page a.detail-whatsapp:hover {
+    background-color: #d71932;
+    border-color: #d71932;
+    color: #ffffff;
 }
 
-/* Pie de página */
+/* BANNER DE AVISO */
 
-.product-detail-page .detail-footer {
-    padding: 24px 0;
-    background: var(--detail-blue);
-    color: #fff;
-    text-align: center;
+.product-detail-page .detail-note {
+    display: block;
+    margin-top: 12px;
+    padding: 13px 15px;
+
+    background-color: #f7f2ec;
+    color: #454545;
+    border: 1px solid #e5d9cd;
+    border-left: 4px solid #d71932;
+    border-radius: 7px;
+
+    font-size: 0.84rem;
+    line-height: 1.6;
 }
 
-.product-detail-page .detail-footer p {
-    margin: 5px 0;
-    font-size: 0.86rem;
+/* Asegurar la legibilidad del texto dentro del aviso */
+
+.product-detail-page .detail-note p {
+    color: #454545;
+}
+
+.product-detail-page .detail-note a {
+    color: #102f78;
+    text-decoration: underline;
 }
 
 /* Móviles y tabletas */
