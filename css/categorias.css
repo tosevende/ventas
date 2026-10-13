@@ -430,3 +430,16 @@
         font-size: 0.74rem;
     }
 }
+
+/* TALLA FIJA DE LOS ACCESORIOS */
+
+.category-page .gym-product-size {
+    margin: 0 0 12px;
+    color: var(--gym-gris);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.category-page .gym-product-size strong {
+    color: var(--gym-azul);
+}
