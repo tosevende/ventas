@@ -1001,6 +1001,22 @@ footer {
     background: #726E6B;
 }
 
+.product-detail-page .color-beige {
+    background: #A97C5D;
+}
+
+.product-detail-page .color-blanco {
+    background: #EAEAEA;
+}
+
+.product-detail-page .color-carmelita {
+    background: #482C24;
+}
+
+.product-detail-page .color-burdeos {
+    background: #661823;
+}
+
 /* Talla */
 
 .product-detail-page .size-options {
