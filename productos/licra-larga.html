@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Licras largas deportivas | TO’ SE VENDE</title>
+    <meta name="description" content="Licras largas deportivas. Consulta colores, talla y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/gimnasio.html">
+                ← Volver a gimnasio
+            </a>
+
+        </div>
+    </header>
+
+
+    <main class="detail-container">
+
+        <section class="product-detail">
+
+            <!-- FOTO DEL PRODUCTO -->
+            <div class="detail-gallery">
+                <img
+                    src="../img/licras-largas.jpg"
+                    alt="Licras largas deportivas en diferentes colores"
+                    class="detail-main-image"
+                >
+            </div>
+
+
+            <!-- INFORMACIÓN DEL PRODUCTO -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">ROPA DEPORTIVA</p>
+
+                <h1>Licras largas deportivas</h1>
+
+                <p class="detail-price">12 USD</p>
+
+                <!-- COLORES -->
+                <div class="detail-option">
+                    <h2>Colores disponibles</h2>
+
+                    <p class="selected-color">
+                        Selecciona un color para consultar
+                    </p>
+
+                    <div class="color-options">
+
+                        <button
+                            type="button"
+                            class="color-circle color-morado"
+                            data-color="Morado"
+                            aria-label="Morado"
+                            title="Morado"
+                        ></button>
+                      
+                        <button
+                            type="button"
+                            class="color-circle color-gris"
+                            data-color="Gris"
+                            aria-label="Gris"
+                            title="Gris"
+                        ></button>
+
+                        <button
+                            type="button"
+                            class="color-circle color-negro"
+                            data-color="Negro"
+                            aria-label="Negro"
+                            title="Negro"
+                        ></button>
+
+                    </div>
+                </div>
+
+
+                <!-- TALLA -->
+                <div class="detail-option">
+                    <h2>Talla disponible</h2>
+
+                    <div class="size-options">
+                        <span class="size-selected">S</span>
+                    </div>
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <a
+                    href="#"
+                    class="detail-whatsapp"
+                    id="whatsapp-product"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+                <p class="detail-note">
+                    Confirma la disponibilidad del color antes de realizar tu compra.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="detail-footer">
+        <div class="detail-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+
+    <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
+    <script>
+        const colorButtons = document.querySelectorAll(".color-circle");
+        const selectedColorText = document.querySelector(".selected-color");
+        const whatsappButton = document.getElementById("whatsapp-product");
+
+        let selectedColor = "";
+
+        // Sustituye este número por el WhatsApp de tu negocio.
+        // Incluye el código del país, sin +, espacios ni guiones.
+        const whatsappNumber = "5355300075";
+
+        function updateWhatsApp() {
+            const message =
+                "Hola, estoy interesada en las licras largas deportivas. " +
+                "Precio: 12 USD. Talla: S. " +
+                "Color: " + (selectedColor || "por confirmar") +
+                ". ¿Está disponible?";
+
+            whatsappButton.href =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(message);
+        }
+
+        colorButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                colorButtons.forEach((item) => {
+                    item.classList.remove("is-selected");
+                    item.removeAttribute("aria-pressed");
+                });
+
+                button.classList.add("is-selected");
+                button.setAttribute("aria-pressed", "true");
+
+                selectedColor = button.dataset.color;
+                selectedColorText.textContent = "Color seleccionado: " + selectedColor;
+
+                updateWhatsApp();
+            });
+        });
+
+        updateWhatsApp();
+    </script>
+
+</body>
+</html>
