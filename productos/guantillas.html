@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guantillas | TO’ SE VENDE</title>
+    <meta name="description" content="Guantillas. Consulta talla y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/gimnasio.html">
+                ← Volver a gimnasio
+            </a>
+
+        </div>
+    </header>
+
+
+    <main class="detail-container">
+
+        <section class="product-detail">
+
+            <!-- FOTO DEL PRODUCTO -->
+            <div class="detail-gallery">
+                <img
+                    src="../img/guantillas.jpg"
+                    alt="Guantillas"
+                    class="detail-main-image"
+                >
+            </div>
+
+
+            <!-- INFORMACIÓN DEL PRODUCTO -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">ACCESORIOS</p>
+
+                <h1>Guantillas</h1>
+
+                <p class="detail-price">10 USD</p>
+
+                <!-- TALLA -->
+                <div class="detail-option">
+                    <h2>Talla disponible</h2>
+
+                    <div class="size-options">
+                        <span class="size-selected">M</span>
+                    </div>
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <a
+                    href="#"
+                    class="detail-whatsapp"
+                    id="whatsapp-product"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+        <footer class="gym-footer">
+            <div class="gym-container">
+                <p><strong>TO’ SE VENDE</strong></p>
+                <p>Tu próxima compra puede estar aquí.</p>
+                <p><a href="../index.html">Volver a la página principal</a></p>
+                <p>© 2026 TO’ SE VENDE</p>
+            </div>
+        </footer>
+
+    <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
+    <script>
+        const whatsappButton = document.getElementById("whatsapp-product");
+
+        // Sustituye este número por el WhatsApp de tu negocio.
+        // Incluye el código del país, sin +, espacios ni guiones.
+        const whatsappNumber = "5355300075";
+
+        function updateWhatsApp() {
+            const message =
+                "Hola, estoy interesada en las Guantillas. " +
+                "Precio: 10 USD. Talla: M. " +
+                ". ¿Está disponible?";
+
+            whatsappButton.href =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(message);
+        }
+
+        colorButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                colorButtons.forEach((item) => {
+                    item.classList.remove("is-selected");
+                    item.removeAttribute("aria-pressed");
+                });
+
+                button.classList.add("is-selected");
+                button.setAttribute("aria-pressed", "true");
+
+                selectedColor = button.dataset.color;
+                selectedColorText.textContent = "Color seleccionado: " + selectedColor;
+
+                updateWhatsApp();
+            });
+        });
+
+        updateWhatsApp();
+    </script>
+
+</body>
+</html>
