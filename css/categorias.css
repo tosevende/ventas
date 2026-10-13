@@ -1,1 +1,432 @@
+/* =========================================
+   PÁGINAS DE CATEGORÍAS
+   Gimnasio y Equipos y herramientas
+========================================= */
 
+.category-page {
+    --gym-azul: #102f78;
+    --gym-rojo: #d71932;
+    --gym-crema: #f7f2ec;
+    --gym-texto: #242424;
+    --gym-gris: #737373;
+
+    color: var(--gym-texto);
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.category-page *,
+.category-page *::before,
+.category-page *::after {
+    box-sizing: border-box;
+}
+
+.category-page {
+    margin: 0;
+}
+
+.category-page a {
+    text-decoration: none;
+}
+
+/* CONTENEDOR */
+
+.category-page .gym-container {
+    width: 92%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* CABECERA */
+
+.category-page .gym-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.category-page .gym-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+}
+
+.category-page .gym-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--gym-azul);
+    font-size: 1.15rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.category-page .gym-brand img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.category-page .back-home {
+    color: var(--gym-azul);
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* PRESENTACIÓN */
+
+.category-page .gym-intro {
+    padding: 34px 0 27px;
+    background: var(--gym-crema);
+    text-align: center;
+}
+
+.category-page .gym-eyebrow {
+    margin: 0 0 8px;
+    color: #a45e5b;
+    text-transform: uppercase;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.category-page .gym-intro h1 {
+    margin: 0 0 10px;
+    color: var(--gym-azul);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+}
+
+.category-page .gym-intro p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+/* ACCESOS A LAS SECCIONES */
+
+.category-page .gym-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 21px 0 25px;
+}
+
+.category-page .gym-filters a {
+    padding: 8px 15px;
+    border: 1px solid #e4dfda;
+    border-radius: 30px;
+    background: #fff;
+    color: var(--gym-azul);
+    font-size: 0.86rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.category-page .gym-filters a:hover {
+    background: var(--gym-azul);
+    color: #fff;
+}
+
+/* SECCIONES */
+
+.category-page .gym-section {
+    padding: 10px 0 32px;
+    scroll-margin-top: 20px;
+}
+
+.category-page .gym-section-title {
+    margin-bottom: 18px;
+}
+
+.category-page .gym-section-title h2 {
+    margin: 0 0 5px;
+    color: var(--gym-azul);
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+.category-page .gym-section-title p {
+    margin: 0;
+    color: var(--gym-gris);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* CUADRÍCULA DE PRODUCTOS */
+
+.category-page .gym-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+}
+
+/* TARJETA */
+
+.category-page .gym-product {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee8e2;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(20, 35, 60, 0.045);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-page .gym-product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(20, 35, 60, 0.09);
+}
+
+/* FOTO */
+
+.category-page .gym-product-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 8px;
+    object-fit: contain;
+    background: #f8f6f3;
+}
+
+/* INFORMACIÓN */
+
+.category-page .gym-product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    padding: 13px;
+}
+
+.category-page .gym-product-info h3 {
+    margin: 0 0 7px;
+    color: var(--gym-texto);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* PRECIO */
+
+.category-page .gym-price {
+    margin: 0 0 12px;
+    color: var(--gym-azul);
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* BOTÓN VER DETALLES */
+
+.category-page .boton-detalles {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    padding: 9px 8px;
+    border: 1px solid var(--gym-azul);
+    border-radius: 7px;
+    background: var(--gym-azul);
+    color: #fff;
+    text-align: center;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.category-page .boton-detalles:hover {
+    background: var(--gym-rojo);
+    border-color: var(--gym-rojo);
+}
+
+/* AVISO DE DISPONIBILIDAD */
+
+.category-page .gym-note {
+    margin: 2px 0 28px;
+    padding: 13px 15px;
+    border-left: 4px solid var(--gym-rojo);
+    border-radius: 5px;
+    background: var(--gym-crema);
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* PIE DE PÁGINA */
+
+.category-page .gym-footer {
+    margin-top: 12px;
+    padding: 23px 0;
+    background: var(--gym-azul);
+    color: #fff;
+    text-align: center;
+}
+
+.category-page .gym-footer p {
+    margin: 5px 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.category-page .gym-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .category-page .gym-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+    .category-page .gym-container {
+        width: 92%;
+    }
+
+    .category-page .gym-header-inner {
+        gap: 8px;
+        padding: 11px 0;
+    }
+
+    .category-page .gym-brand {
+        gap: 7px;
+        font-size: clamp(0.88rem, 3.7vw, 1.08rem);
+    }
+
+    .category-page .gym-brand img {
+        width: 37px;
+        height: 37px;
+    }
+
+    .category-page .back-home {
+        font-size: 0.75rem;
+    }
+
+    .category-page .gym-intro {
+        padding: 27px 0 23px;
+    }
+
+    .category-page .gym-intro p {
+        font-size: 0.92rem;
+    }
+
+    .category-page .gym-filters {
+        gap: 8px;
+        padding: 18px 0 22px;
+    }
+
+    .category-page .gym-filters a {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+    }
+
+    .category-page .gym-section {
+        padding: 8px 0 27px;
+    }
+
+    .category-page .gym-section-title {
+        margin-bottom: 15px;
+    }
+
+    .category-page .gym-section-title h2 {
+        font-size: 1.3rem;
+    }
+
+    .category-page .gym-section-title p {
+        font-size: 0.86rem;
+    }
+
+    .category-page .gym-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .category-page .gym-product {
+        border-radius: 11px;
+    }
+
+    .category-page .gym-product-image {
+        padding: 5px;
+    }
+
+    .category-page .gym-product-info {
+        padding: 10px;
+    }
+
+    .category-page .gym-product-info h3 {
+        font-size: 0.88rem;
+        line-height: 1.35;
+    }
+
+    .category-page .gym-price {
+        margin-bottom: 10px;
+        font-size: 1.08rem;
+    }
+
+    .category-page .boton-detalles {
+        padding: 8px 5px;
+        border-radius: 6px;
+        font-size: 0.78rem;
+    }
+
+    .category-page .gym-note {
+        padding: 11px 12px;
+        font-size: 0.84rem;
+    }
+}
+
+/* PANTALLAS MUY ESTRECHAS */
+
+@media (max-width: 360px) {
+    .category-page .gym-brand {
+        font-size: 0.82rem;
+    }
+
+    .category-page .gym-brand img {
+        width: 33px;
+        height: 33px;
+    }
+
+    .category-page .back-home {
+        font-size: 0.7rem;
+    }
+
+    .category-page .gym-products {
+        gap: 8px;
+    }
+
+    .category-page .gym-product-info {
+        padding: 8px;
+    }
+
+    .category-page .gym-product-info h3 {
+        font-size: 0.82rem;
+    }
+
+    .category-page .gym-price {
+        font-size: 1rem;
+    }
+
+    .category-page .boton-detalles {
+        font-size: 0.74rem;
+    }
+}
