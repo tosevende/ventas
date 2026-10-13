@@ -999,6 +999,14 @@ footer {
     background: #171719;
 }
 
+.product-detail-page .color-morado {
+    background: #ADA2DC;
+}
+
+.product-detail-page .color-gris {
+    background: #726E6B;
+}
+
 /* Talla */
 
 .product-detail-page .size-options {
