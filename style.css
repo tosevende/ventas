@@ -928,12 +928,6 @@ footer {
     font-weight: 800;
 }
 
-.product-detail-page .detail-description {
-    margin-bottom: 26px;
-    color: #666;
-    line-height: 1.7;
-}
-
 /* Opciones */
 
 .product-detail-page .detail-option {
@@ -1045,13 +1039,6 @@ footer {
 
 .product-detail-page .detail-whatsapp:hover {
     background: var(--detail-red);
-}
-
-.product-detail-page .detail-note {
-    margin-top: 12px;
-    color: #777;
-    font-size: 0.84rem;
-    line-height: 1.5;
 }
 
 /* Pie de página */
