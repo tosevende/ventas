@@ -443,3 +443,39 @@
 .category-page .gym-product-size strong {
     color: var(--gym-azul);
 }
+
+/* DESCRIPCIÓN DE LOS PRODUCTOS DE EQUIPOS Y HERRAMIENTAS */
+.category-page .gym-product-description {
+    margin: 0 0 16px;
+    color: var(--gym-gris);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+/* NAVEGACIÓN ENTRE EQUIPOS Y HERRAMIENTAS */
+.category-page .gym-category-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+.category-page .gym-category-nav .gym-filter-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background: var(--gym-azul);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+.category-page .gym-category-nav .gym-filter-btn:hover {
+    background: var(--gym-rojo);
+}
+/* ESPACIO AL NAVEGAR HACIA CADA SECCIÓN */
+.category-page .gym-section {
+    scroll-margin-top: 24px;
+}
