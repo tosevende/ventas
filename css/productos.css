@@ -221,6 +221,30 @@
     background: #661823;
 }
 
+.product-detail-page .color-amarillo-mostaza {
+    background: #D8AD32;
+}
+
+.product-detail-page .color-rosa-empolvado {
+    background: #D2A39A;
+}
+
+.product-detail-page .color-beige-topo {
+    background: #B9A99A;
+}
+
+.product-detail-page .color-rosa-malva {
+    background: #856B6D;
+}
+
+.product-detail-page .color-verde-bosque {
+    background: #243D32;
+}
+
+.product-detail-page .color-marron-oscuro {
+    background: #302B2B;
+}
+
 /* TALLAS */
 
 .product-detail-page .size-options {
