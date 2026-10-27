@@ -364,3 +364,125 @@
         font-size: 1.6rem;
     }
 }
+
+      /* =========================================
+         BOTÓN VER MÁS DETALLES
+      ========================================= */
+      
+      .product-detail-page .detail-more-button {
+          display: inline-block;
+          margin-top: 18px;
+          padding: 0;
+          border: none;
+          background: transparent;
+          color: var(--detail-blue);
+          font: inherit;
+          font-weight: 700;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          cursor: pointer;
+      }
+      
+      .product-detail-page .detail-more-button:hover {
+          color: var(--detail-red);
+      }
+      
+      /* =========================================
+         VENTANA EMERGENTE DE DETALLES
+      ========================================= */
+      
+      .product-detail-page .details-modal {
+          display: none;
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          background: rgba(0, 0, 0, 0.65);
+      }
+      
+      .product-detail-page .details-modal.is-open {
+          display: flex;
+      }
+      
+      .product-detail-page .details-modal-content {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+          max-height: 85vh;
+          overflow-y: auto;
+          padding: 32px;
+          border-radius: 16px;
+          background: #fff;
+          color: #292929;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      }
+      
+      .product-detail-page .details-modal-content h2 {
+          margin: 0 35px 18px 0;
+          color: var(--detail-blue);
+          font-size: 1.5rem;
+          line-height: 1.3;
+      }
+      
+      .product-detail-page .details-modal-content p {
+          margin: 0 0 14px;
+          line-height: 1.7;
+      }
+      
+      .product-detail-page .details-modal-content ul {
+          padding-left: 22px;
+          margin: 12px 0 20px;
+      }
+      
+      .product-detail-page .details-modal-content li {
+          margin-bottom: 8px;
+      }
+      
+      .product-detail-page .details-modal-close {
+          position: absolute;
+          top: 12px;
+          right: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          background: var(--detail-cream);
+          color: var(--detail-blue);
+          font-size: 1.6rem;
+          line-height: 1;
+          cursor: pointer;
+      }
+      
+      .product-detail-page .details-modal-close:hover {
+          background: var(--detail-red);
+          color: #fff;
+      }
+      
+      /* Evita que la página se desplace con la ventana abierta */
+      
+      body.product-detail-page.modal-open {
+          overflow: hidden;
+      }
+      
+      /* VENTANA EMERGENTE EN MÓVILES */
+      
+      @media (max-width: 600px) {
+          .product-detail-page .details-modal {
+              padding: 12px;
+          }
+      
+          .product-detail-page .details-modal-content {
+              padding: 26px 20px;
+              max-height: 90vh;
+          }
+      
+          .product-detail-page .details-modal-content h2 {
+              font-size: 1.3rem;
+          }
+      }
