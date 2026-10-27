@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gato hidráulico de botella | TO’ SE VENDE</title>
+
+    <meta name="description"
+          content="Descubre nuestro gato hidráulico de botella soldado de 10 toneladas. Consulta sus características y disponibilidad.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+
+<body class="product-page">
+
+    <!-- CABECERA -->
+    <header class="product-header">
+        <div class="product-container product-header-inner">
+            <a class="product-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="product-back" href="../categorias/equipos.html">
+                ← Volver a equipos
+            </a>
+        </div>
+    </header>
+
+    <main class="product-container">
+
+        <!-- PRODUCTO -->
+        <section class="product-detail">
+
+            <div class="product-gallery">
+                <img
+                    class="product-main-image"
+                    src="../img/gato.jpg"
+                    alt="Gato hidráulico de botella soldado de 10 toneladas">
+            </div>
+
+            <div class="product-summary">
+
+                <p class="product-eyebrow">TO’ SE VENDE · EQUIPOS Y HERRAMIENTAS</p>
+
+                <h1>Gato hidráulico de botella soldado</h1>
+
+                <p class="product-price">95 USD</p>
+
+                <p class="product-short-description">
+                    Gato hidráulico de botella soldado con capacidad
+                    de 10 toneladas, diseñado para ofrecer resistencia,
+                    estabilidad y durabilidad.
+                </p>
+
+                <!-- ENLACE A LA VENTANA DE DETALLES -->
+                <button
+                    type="button"
+                    class="product-more-link"
+                    id="open-details"
+                    aria-haspopup="dialog"
+                    aria-controls="details-modal">
+                    Ver más detalles
+                    <span aria-hidden="true"> ↗️</span>
+                </button>
+
+                <!-- WHATSAPP -->
+                <a
+                    class="product-whatsapp"
+                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20el%20gato%20hidr%C3%A1ulico%20de%20botella%20soldado%20de%2010%20toneladas."
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Consultar por WhatsApp
+                </a>
+
+                <p class="product-contact-note">
+                    Consulta la disponibilidad y coordina tu compra
+                    directamente con nosotros.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN INFERIOR -->
+        <nav class="product-bottom-nav">
+            <a href="../categorias/equipos.html">
+                ← Seguir explorando equipos y herramientas
+            </a>
+        </nav>
+
+    </main>
+
+    <!-- VENTANA EMERGENTE -->
+    <div
+        class="details-modal"
+        id="details-modal"
+        aria-hidden="true">
+
+        <div class="details-modal-backdrop" data-close-modal></div>
+
+        <section
+            class="details-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1">
+
+            <button
+                type="button"
+                class="details-modal-close"
+                id="close-details"
+                aria-label="Cerrar detalles">
+                &times;
+            </button>
+
+            <p class="product-eyebrow">INFORMACIÓN DEL PRODUCTO</p>
+
+            <h2 id="modal-title">Gato hidráulico de botella soldado</h2>
+
+            <p class="product-price">95 USD</p>
+
+            <div class="details-modal-body">
+                <h3>Descripción</h3>
+
+                <p>
+                    Gato hidráulico de botella soldado con capacidad
+                    de 10 toneladas. Su construcción está pensada para
+                    proporcionar resistencia y durabilidad en tareas
+                    compatibles con su capacidad y especificaciones.
+                </p>
+
+                <h3>Características principales</h3>
+
+                <ul>
+                    <li>Tipo: gato hidráulico de botella soldado.</li>
+                    <li>Capacidad nominal indicada: 10 toneladas.</li>
+                    <li>Construcción robusta.</li>
+                </ul>
+
+                <p class="details-disclaimer">
+                    Antes de utilizarlo, consulta las instrucciones del
+                    fabricante y las condiciones de uso seguro. No te
+                    sitúes nunca debajo de un vehículo sostenido
+                    únicamente por un gato.
+                </p>
+            </div>
+
+            <a
+                class="product-whatsapp"
+                href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20el%20gato%20hidr%C3%A1ulico%20de%20botella%20soldado%20de%2010%20toneladas."
+                target="_blank"
+                rel="noopener noreferrer">
+                Consultar por WhatsApp
+            </a>
+
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="product-footer">
+        <div class="product-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+    <!-- FUNCIONAMIENTO DE LA VENTANA -->
+    <script>
+        const modal = document.getElementById("details-modal");
+        const openButton = document.getElementById("open-details");
+        const closeButton = document.getElementById("close-details");
+        const dialog = modal.querySelector(".details-modal-content");
+        let previousFocus = null;
+
+        function openModal() {
+            previousFocus = document.activeElement;
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modal.querySelectorAll("[data-close-modal]").forEach(element => {
+            element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && modal.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
