@@ -486,3 +486,14 @@
               font-size: 1.3rem;
           }
       }
+
+.sold-out-status {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 7px 12px;
+    color: white;
+    background: #d71932;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
