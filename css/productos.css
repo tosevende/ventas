@@ -500,9 +500,9 @@
 }
 
 /* Botón de WhatsApp deshabilitado por producto agotado */
-.whatsapp-disabled {
-    opacity: 0.5;
+.detail-whatsapp.whatsapp-disabled {
+    opacity: 1;
+    filter: none;
     cursor: not-allowed;
     pointer-events: none;
-    filter: grayscale(0.5);
 }
