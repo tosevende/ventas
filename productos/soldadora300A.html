@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soldadora 3 en 1 (300A) | TO’ SE VENDE</title>
+
+    <meta name="description"
+          content="Soldadora 3 en 1 (300A). Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/equipos.html">
+                ← Volver atrás
+            </a>
+
+        </div>
+    </header>
+
+    <main class="detail-container">
+
+        <!-- PRODUCTO -->
+        <section class="product-detail">
+
+            <!-- IMAGEN -->
+            <div class="detail-gallery">
+                <img
+                    class="detail-main-image"
+                    src="../img/soldadora-300a.jpg"
+                    alt="Soldadora 3 en 1 (300A)">
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">
+                    EQUIPOS Y HERRAMIENTAS
+                </p>
+
+                <h1>Soldadora 3 en 1 (300A)</h1>
+
+                <p class="detail-price">250 USD</p>
+
+                <p>
+                    Soldadora con sistema 3 en 1 compatible con soldadura MIG, MMA (electrodo) y TIG (Lift TIG). 
+                </p>
+
+                <!-- VER MÁS DETALLES -->
+                <button
+                    type="button"
+                    class="detail-more-button"
+                    id="open-details"
+                    aria-haspopup="dialog"
+                    aria-controls="details-modal">
+                    Ver más detalles 
+                </button>
+
+                <!-- WHATSAPP -->
+                <a
+                    class="detail-whatsapp"
+                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20la%20soldadora%203%20en%201."
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Consultar por WhatsApp
+                </a>
+
+                <p>
+                    Consulta la disponibilidad y coordina tu compra
+                    directamente con nosotros.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- VENTANA EMERGENTE CON LOS DETALLES -->
+    <div
+        class="details-modal"
+        id="details-modal"
+        aria-hidden="true">
+
+        <div
+            class="details-modal-backdrop"
+            data-close-modal>
+        </div>
+
+        <section
+            class="details-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1">
+
+            <button
+                type="button"
+                class="details-modal-close"
+                id="close-details"
+                aria-label="Cerrar detalles">
+                &times;
+            </button>
+
+            <p class="detail-eyebrow">INFORMACIÓN DEL PRODUCTO</p>
+
+            <h2 id="modal-title">
+                Soldadora 3 en 1 (300A)
+            </h2>
+
+            <p class="detail-price">250 USD</p>
+
+            <div class="details-modal-body">
+
+                <h3>Descripción</h3>
+
+                <p>
+                    <strong>Multiproceso:</strong> Sistema 3 en 1 compatible con soldadura MIG, MMA (electrodo) y TIG (Lift TIG).  
+
+​                    <strong>Tecnología:</strong> Inversor electrónico (mayor ahorro de energía y arco estable).  
+
+                    ​<strong>Control:</strong> Panel digital frontal y alimentador de alambre integrado.
+                </p>
+
+                <h3>Características técnicas</h3>
+
+                <ul>
+                    <li><strong>Amperaje máximo:</strong> 300A</li>
+                    <li><strong>Potencia:</strong> 5.1kw</li>
+                    <li><strong>Tipo de electrodo (MMA):</strong>  E6013 y E7018 y otros</li>
+                    <li><strong>Compatibilidad con alambre:</strong> 0.8mm y 1mm</li>
+                </ul>
+
+                <h3>Aplicaciones (Dónde se utiliza):</h3>
+
+                <p>
+                    Talleres de herrería, cerrajería, trabajos de mantenimiento, proyectos de construcción y reparaciones en el hogar.
+                </p>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>
+                <a href="../index.html">
+                    Volver a la página principal
+                </a>
+            </p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+    <!-- FUNCIONAMIENTO DE LA VENTANA -->
+    <script>
+        const modal = document.getElementById("details-modal");
+        const openButton = document.getElementById("open-details");
+        const closeButton = document.getElementById("close-details");
+
+        let previousFocus = null;
+
+        function openModal() {
+            previousFocus = document.activeElement;
+
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modal.querySelectorAll("[data-close-modal]").forEach(element => {
+            element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
