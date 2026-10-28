@@ -527,3 +527,25 @@
         line-height: 1.7;
     }
 }
+
+.sold-out-image-wrapper {
+    position: relative;
+}
+
+.sold-out-image-wrapper .gym-product-image {
+    display: block;
+    width: 100%;
+}
+
+.sold-out-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 8px 13px;
+    background: #d71932;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 800;
+    border-radius: 5px;
+}
