@@ -487,6 +487,7 @@
           }
       }
 
+/* producto agotado */
 .sold-out-status {
     display: inline-block;
     margin: 0 0 16px;
@@ -496,4 +497,12 @@
     border-radius: 5px;
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+/* Botón de WhatsApp deshabilitado por producto agotado */
+.whatsapp-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(0.5);
 }
