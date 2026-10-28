@@ -501,8 +501,12 @@
 
 /* Botón de WhatsApp deshabilitado por producto agotado */
 .detail-whatsapp.whatsapp-disabled {
-    opacity: 1;
-    filter: none;
+    background: #b8bdc5;
+    color: #f5f5f5;
+    border-color: #b8bdc5;
+    opacity: 0.8;
     cursor: not-allowed;
     pointer-events: none;
+    box-shadow: none;
+    filter: grayscale(0.4);
 }
