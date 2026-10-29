@@ -38,7 +38,13 @@
             <span data-cart-count hidden>0</span>
         `;
 
-        cabecera.appendChild(enlace);
+        const menu = cabecera.querySelector("nav");
+
+        if (menu) {
+            menu.appendChild(enlace);
+        } else {
+            cabecera.appendChild(enlace);
+        }
     }
 
     function iniciar() {
