@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Mi carrito | TO’ SE VENDE</title>
+    <meta name="description" content="Revisa tus productos antes de consultar por WhatsApp.">
+
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpeg" alt="Logo de TO’ SE VENDE" class="logo-img">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#categorias">Categorías</a>
+                <a href="index.html#contacto">Contacto</a>
+                <a href="carrito.html" class="cart-link">
+                    Carrito <span data-cart-count hidden>0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <h1>Mi carrito</h1>
+            <p class="cart-intro">
+                Revisa los productos que has seleccionado.
+            </p>
+
+            <div id="cart-content" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 TO’ SE VENDE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/carrito.js"></script>
+    <script>
+        const cartContent = document.getElementById("cart-content");
+
+        function escaparHTML(valor) {
+            return String(valor).replace(/[&<>"']/g, caracter => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[caracter]);
+        }
+
+        function formatoPrecio(numero) {
+            return Number(numero).toFixed(2);
+        }
+
+        function renderizarCarrito() {
+            const carrito = obtenerCarrito();
+
+            if (carrito.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="cart-empty">
+                        <h2>Tu carrito está vacío</h2>
+                        <p>Aún no has añadido ningún producto.</p>
+                        <a href="index.html#categorias">
+                            Explorar productos
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            const total = carrito.reduce(
+                (suma, producto) =>
+                    suma + producto.precio * producto.cantidad,
+                0
+            );
+
+            cartContent.innerHTML = `
+                <div class="cart-list">
+                    ${carrito.map(producto => `
+                        <article class="cart-item">
+                            <div>
+                                <h2>${escaparHTML(producto.nombre)}</h2>
+                                <p class="cart-item-price">
+                                    ${formatoPrecio(producto.precio)} USD por unidad
+                                </p>
+
+                                <div class="cart-item-actions">
+                                    <div class="cart-quantity">
+                                        <button type="button"
+                                            data-action="minus"
+                                            data-id="${escaparHTML(producto.id)}"
+                                            aria-label="Reducir cantidad">−</button>
+
+                                        <span>${producto.cantidad}</span>
+
+                                        <button type="button"
+                                            data-action="plus"
+                                            data-id="${escaparHTML(producto.id)}"
+                                            aria-label="Aumentar cantidad">+</button>
+                                    </div>
+
+                                    <button type="button"
+                                        class="cart-remove"
+                                        data-action="remove"
+                                        data-id="${escaparHTML(producto.id)}">
+                                        Eliminar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <strong>
+                                ${formatoPrecio(producto.precio * producto.cantidad)} USD
+                            </strong>
+                        </article>
+                    `).join("")}
+                </div>
+
+                <section class="cart-summary">
+                    <p>Total estimado:</p>
+                    <p class="cart-total">${formatoPrecio(total)} USD</p>
+                    <p>
+                        La disponibilidad y el importe final se confirmarán
+                        por WhatsApp.
+                    </p>
+
+                    <button type="button" class="cart-button" id="checkout">
+                        Consultar pedido por WhatsApp
+                    </button>
+
+                    <button type="button" class="cart-button"
+                        id="clear-cart" style="background:#777;">
+                        Vaciar carrito
+                    </button>
+                </section>
+            `;
+        }
+
+        cartContent.addEventListener("click", evento => {
+            const boton = evento.target.closest("button");
+            if (!boton) return;
+
+            if (boton.id === "clear-cart") {
+                guardarCarrito([]);
+                renderizarCarrito();
+                return;
+            }
+
+            if (boton.id === "checkout") {
+                const carrito = obtenerCarrito();
+                if (!carrito.length) return;
+
+                const lineas = carrito.map(producto =>
+                    `- ${producto.nombre} x${producto.cantidad}: ` +
+                    ${formatoPrecio(producto.precio * producto.cantidad)} USD
+                );
+
+                const total = carrito.reduce(
+                    (suma, producto) =>
+                        suma + producto.precio * producto.cantidad,
+                    0
+                );
+
+                const mensaje = [
+                    "Hola, TO’ SE VENDE. Quisiera consultar este pedido:",
+                    "",
+                    ...lineas,
+                    "",
+                    Total estimado: ${formatoPrecio(total)} USD,
+                    "",
+                    "¿Podrían confirmarme la disponibilidad?"
+                ].join("\n");
+
+                const url =
+                    "https://wa.me/5355300075?text=" +
+                    encodeURIComponent(mensaje);
+
+                window.open(url, "_blank");
+                return;
+            }
+
+            const accion = boton.dataset.action;
+            if (!accion) return;
+
+            const id = boton.dataset.id;
+            const carrito = obtenerCarrito();
+            const producto = carrito.find(item => item.id === id);
+
+            if (!producto) return;
+
+            if (accion === "plus") producto.cantidad += 1;
+
+            if (accion === "minus") {
+                producto.cantidad -= 1;
+
+                if (producto.cantidad <= 0) {
+                    carrito.splice(carrito.indexOf(producto), 1);
+                }
+            }
+
+            if (accion === "remove") {
+                carrito.splice(carrito.indexOf(producto), 1);
+            }
+
+            guardarCarrito(carrito);
+            renderizarCarrito();
+        });
+
+        renderizarCarrito();
+    </script>
+</body>
+</html>
