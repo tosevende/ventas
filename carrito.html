@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/icono-carrito.css">
 </head>
 <body>
 
@@ -18,14 +19,11 @@
                 <img src="img/logo.jpeg" alt="Logo de TO’ SE VENDE" class="logo-img">
                 <span>TO’ SE VENDE</span>
             </a>
-
+    
             <nav>
                 <a href="index.html">Inicio</a>
                 <a href="index.html#categorias">Categorías</a>
                 <a href="index.html#contacto">Contacto</a>
-                <a href="carrito.html" class="cart-link">
-                    Carrito <span data-cart-count hidden>0</span>
-                </a>
             </nav>
         </div>
     </header>
@@ -46,6 +44,7 @@
     </footer>
 
     <script src="js/carrito.js"></script>
+    <script src="js/cabecera-carrito.js"></script>
     <script>
         const cartContent = document.getElementById("cart-content");
 
@@ -138,8 +137,8 @@
                         Consultar pedido por WhatsApp
                     </button>
 
-                    <button type="button" class="cart-button"
-                        id="clear-cart" style="background:#777;">
+                    <button type="button" class="cart-button cart-button-secondary"
+                        id="clear-cart">
                         Vaciar carrito
                     </button>
                 </section>
