@@ -161,8 +161,9 @@
                 if (!carrito.length) return;
 
                 const lineas = carrito.map(producto =>
-                    `- ${producto.nombre} x${producto.cantidad}: ` +
-                    ${formatoPrecio(producto.precio * producto.cantidad)} USD
+                    `- ${producto.nombre} x${producto.cantidad}: ${
+                        formatoPrecio(producto.precio * producto.cantidad)
+                    } USD`
                 );
 
                 const total = carrito.reduce(
@@ -176,7 +177,7 @@
                     "",
                     ...lineas,
                     "",
-                    Total estimado: ${formatoPrecio(total)} USD,
+                    `Total estimado: ${formatoPrecio(total)} USD`,
                     "",
                     "¿Podrían confirmarme la disponibilidad?"
                 ].join("\n");
