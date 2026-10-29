@@ -265,9 +265,9 @@
     font-weight: 700;
 }
 
-/* BOTÓN DE WHATSAPP */
+/* BOTÓN DE AÑADIR AL CARRITO / WHATSAPP */
 
-.product-detail-page a.detail-whatsapp {
+.product-detail-page .detail-whatsapp {
     display: block;
     width: 100%;
     margin-top: 28px;
@@ -280,15 +280,19 @@
 
     text-align: center;
     text-decoration: none;
+    font-family: inherit;
     font-size: 0.98rem;
     font-weight: 700;
     line-height: 1.5;
 
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
     transition: background-color 0.2s, border-color 0.2s;
 }
 
-.product-detail-page a.detail-whatsapp:hover {
+.product-detail-page .detail-whatsapp:hover {
     background-color: #d71932;
     border-color: #d71932;
     color: #ffffff;
