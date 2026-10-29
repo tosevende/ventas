@@ -1,1 +1,137 @@
+.cart-page {
+    padding: 40px 0 60px;
+}
 
+.cart-page h1 {
+    margin-bottom: 10px;
+}
+
+.cart-intro {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cart-list {
+    display: grid;
+    gap: 16px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid #e6e0d8;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.cart-item h2 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.cart-item-price {
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-actions button {
+    cursor: pointer;
+    border: 1px solid #d8d0c5;
+    background: #f8f5f0;
+    border-radius: 7px;
+    padding: 8px 12px;
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-remove {
+    color: #a32230;
+}
+
+.cart-summary {
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 12px;
+    background: #f7f3ed;
+}
+
+.cart-total {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cart-button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: #174a87;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    background: #103967;
+}
+
+.cart-empty {
+    padding: 35px 20px;
+    text-align: center;
+    border: 1px dashed #d8d0c5;
+    border-radius: 12px;
+}
+
+.cart-empty a {
+    color: #174a87;
+}
+
+.cart-notice {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10000;
+    max-width: calc(100vw - 40px);
+    padding: 14px 18px;
+    border-radius: 9px;
+    background: #183f32;
+    color: white;
+    box-shadow: 0 5px 20px #0002;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.cart-notice.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+    .cart-page {
+        padding-top: 25px;
+    }
+
+    .cart-item {
+        padding: 15px;
+    }
+}
