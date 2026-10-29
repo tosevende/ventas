@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Focos Led H4| TO’ SE VENDE</title>
+
+    <meta name="description"
+          content="Focos Led H4 Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/bicicletas-accesorios.html">
+                ← Volver atrás
+            </a>
+
+        </div>
+    </header>
+
+    <main class="detail-container">
+
+        <!-- PRODUCTO -->
+        <section class="product-detail">
+
+            <!-- IMAGEN -->
+            <div class="detail-gallery">
+                <img
+                    class="detail-main-image"
+                    src="../img/focos-led.jpg"
+                    alt="Focos Led H4">
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">
+                    BICICLETAS Y ACCESORIOS
+                </p>
+
+                <h1>Focos Led H4</h1>
+
+                <!-- ESTADO: DISPONIBLE
+                <p class="detail-price">35 USD</p>
+                -->
+                
+                <!-- ESTADO: AGOTADO -->
+                <p class="detail-price">35 USD</p>
+                <p class="sold-out-status">
+                    Agotado
+                </p>
+                <p>
+                    Focos LED H4 para mayor iluminación de tu vehículo, de fácil instalación, larga duración y bajo consumo.
+                </p>
+
+                <!-- VER MÁS DETALLES -->
+                <button
+                    type="button"
+                    class="detail-more-button"
+                    id="open-details"
+                    aria-haspopup="dialog"
+                    aria-controls="details-modal">
+                    Ver más detalles 
+                </button>
+
+                <!-- WHATSAPP -->
+                <!-- ESTADO: DISPONIBLE
+                <a
+                    class="detail-whatsapp"
+                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20los%20focos%20led%20H4"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Consultar por WhatsApp
+                </a>
+                -->
+                
+                <!-- ESTADO: AGOTADO -->
+                <a
+                    class="detail-whatsapp whatsapp-disabled"
+                    href="#"
+                    aria-disabled="true"
+                    tabindex="-1"
+                    onclick="return false;">
+                    Consultar por WhatsApp
+                </a>
+                
+                <p>
+                    Consulta la disponibilidad y coordina tu compra
+                    directamente con nosotros.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- VENTANA EMERGENTE CON LOS DETALLES -->
+    <div
+        class="details-modal"
+        id="details-modal"
+        aria-hidden="true">
+
+        <div
+            class="details-modal-backdrop"
+            data-close-modal>
+        </div>
+
+        <section
+            class="details-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1">
+
+            <button
+                type="button"
+                class="details-modal-close"
+                id="close-details"
+                aria-label="Cerrar detalles">
+                &times;
+            </button>
+
+            <p class="detail-eyebrow">INFORMACIÓN DEL PRODUCTO</p>
+
+            <h2 id="modal-title">
+                Focos Led H4
+            </h2>
+
+            <p class="detail-price">35 USD</p>
+            
+            <!-- 
+            <p class="sold-out-status">
+                    Agotado
+            </p>
+            -->
+          
+            <div class="details-modal-body">
+
+                <h3>Características técnicas</h3>
+                
+            </div>
+
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>
+                <a href="../index.html">
+                    Volver a la página principal
+                </a>
+            </p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+    <!-- FUNCIONAMIENTO DE LA VENTANA -->
+    <script>
+        const modal = document.getElementById("details-modal");
+        const openButton = document.getElementById("open-details");
+        const closeButton = document.getElementById("close-details");
+
+        let previousFocus = null;
+
+        function openModal() {
+            previousFocus = document.activeElement;
+
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modal.querySelectorAll("[data-close-modal]").forEach(element => {
+            element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
