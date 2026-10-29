@@ -1,0 +1,64 @@
+/* ICONO DEL CARRITO EN LA CABECERA */
+.cart-icon-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-left: 12px;
+    border: 1px solid #e6e0d8;
+    border-radius: 10px;
+    background: #fff;
+    color: #174a87;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cart-icon-link:hover {
+    background: #174a87;
+    color: #fff;
+}
+
+.cart-icon-link svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+}
+
+.cart-icon-link [data-cart-count] {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    background: #b32635;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.cart-icon-link [data-cart-count][hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .cart-icon-link {
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+    }
+
+    .cart-icon-link svg {
+        width: 21px;
+        height: 21px;
+    }
+}
