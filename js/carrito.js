@@ -67,6 +67,11 @@ function agregarAlCarrito(producto) {
 // Conectar todos los botones de añadir al carrito
 document.querySelectorAll("[data-add-to-cart]").forEach(boton => {
     boton.addEventListener("click", () => {
+        if (boton.dataset.available === "false") {
+        mostrarAviso("Este producto está agotado.");
+        return;
+        }
+        
         const producto = {
             id: boton.dataset.id,
             nombre: boton.dataset.name,
