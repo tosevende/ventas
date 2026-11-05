@@ -6,10 +6,10 @@
 
     <title>Proyector 4K ULTRA HD | TO’ SE VENDE</title>
 
-    <meta name="description"
-          content="Proyector 4K ULTRA HD. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+    <meta name="description" content="Proyector 4K ULTRA HD. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
 
     <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
 </head>
 
 <body class="product-detail-page">
@@ -76,26 +76,29 @@
                     Ver más detalles 
                 </button>
 
-                <!-- WHATSAPP -->
+                 <!-- Carrito -->
                 <!-- ESTADO: DISPONIBLE
-                <a
+                <button
+                    type="button"
                     class="detail-whatsapp"
-                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20el%20proyector%204K"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Consultar por WhatsApp
-                </a>
+                    data-add-to-cart
+                    data-id="Proyector"
+                    data-name="Proyector 4K UTRA HD"
+                    data-price="100">
+                    Añadir al carrito
+                </button>
                 -->
                 
-                <!-- ESTADO: AGOTADO -->
-                <a
+                <!-- ESTADO: AGOTADO --> 
+                <button
+                    type="button"
                     class="detail-whatsapp whatsapp-disabled"
-                    href="#"
-                    aria-disabled="true"
-                    tabindex="-1"
-                    onclick="return false;">
-                    Consultar por WhatsApp
-                </a>
+                    data-add-to-cart
+                    data-available="false"
+                    disabled>
+                    Agotado
+                </button>
+                           
                 
                 <p>
                     Consulta la disponibilidad y coordina tu compra
@@ -213,6 +216,9 @@
             }
         });
     </script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
 
 </body>
 </html>
