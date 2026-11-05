@@ -6,10 +6,10 @@
 
     <title>Soldadora Inversora 3 en 1 FAGHTO 350A | TO’ SE VENDE</title>
 
-    <meta name="description"
-          content="Soldadora Inversora 3 en 1 FAGHTO 350A. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+    <meta name="description" content="Soldadora Inversora 3 en 1 FAGHTO 350A. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
 
     <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
 </head>
 
 <body class="product-detail-page">
@@ -78,28 +78,29 @@
                     Ver más detalles 
                 </button>
 
-                
-                <!-- WHATSAPP -->
+                 <!-- Carrito -->
                 <!-- ESTADO: DISPONIBLE-->
-                <a
+                <button
+                    type="button"
                     class="detail-whatsapp"
-                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20la%20soldadora%20inversora%203%20en%201."
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Consultar por WhatsApp
-                </a>
-                
-                
+                    data-add-to-cart
+                    data-id="soldadora-350A"
+                    data-name="Soldadora Inversora 3 en 1 FAGHTO 350A"
+                    data-price="280">
+                    Añadir al carrito
+                </button>
+
                 <!-- ESTADO: AGOTADO 
-                <a
+                <button
+                    type="button"
                     class="detail-whatsapp whatsapp-disabled"
-                    href="#"
-                    aria-disabled="true"
-                    tabindex="-1"
-                    onclick="return false;">
-                    Consultar por WhatsApp
-                </a>
--->
+                    data-add-to-cart
+                    data-available="false"
+                    disabled>
+                    Agotado
+                </button>
+                -->           
+                
                 <p>
                     Consulta la disponibilidad y coordina tu compra
                     directamente con nosotros.
@@ -231,6 +232,9 @@
             }
         });
     </script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
 
 </body>
 </html>
