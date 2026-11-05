@@ -6,10 +6,10 @@
 
     <title>Soldadora 3 en 1 (300A) | TO’ SE VENDE</title>
 
-    <meta name="description"
-          content="Soldadora 3 en 1 (300A). Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+    <meta name="description" content="Soldadora 3 en 1 (300A). Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
 
     <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
 </head>
 
 <body class="product-detail-page">
@@ -68,14 +68,28 @@
                     Ver más detalles 
                 </button>
 
-                <!-- WHATSAPP -->
-                <a
+                <!-- Carrito -->
+                <!-- ESTADO: DISPONIBLE-->
+                <button
+                    type="button"
                     class="detail-whatsapp"
-                    href="https://wa.me/5355300075?text=Hola%2C%20quisiera%20consultar%20por%20la%20soldadora%203%20en%201."
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Consultar por WhatsApp
-                </a>
+                    data-add-to-cart
+                    data-id="soldadora-300A"
+                    data-name="Soldadora 3 en 1 (300A)"
+                    data-price="250">
+                    Añadir al carrito
+                </button>
+
+                <!-- ESTADO: AGOTADO 
+                <button
+                    type="button"
+                    class="detail-whatsapp whatsapp-disabled"
+                    data-add-to-cart
+                    data-available="false"
+                    disabled>
+                    Agotado
+                </button>
+                -->            
 
                 <p>
                     Consulta la disponibilidad y coordina tu compra
@@ -210,6 +224,9 @@
             }
         });
     </script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
 
 </body>
 </html>
