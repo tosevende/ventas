@@ -535,3 +535,16 @@ background: #999;
     transform: rotate(-45deg);
     pointer-events: none;
 }
+
+/* BOTÓN AÑADIR AL CARRITO */
+.detail-add-cart {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.detail-add-cart:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
