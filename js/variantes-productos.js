@@ -1,78 +1,92 @@
 (function () {
-    const colorButtons = document.querySelectorAll(".color-circle");
+    function iniciarVariantes() {
+        const colorButtons = document.querySelectorAll(".color-circle");
 
-    // Si la página no tiene selección de colores, no hacemos nada.
-    if (!colorButtons.length) return;
+        if (!colorButtons.length) return;
 
-    const disponibilidad = window.disponibilidadColores || {};
-    const selectedColorText = document.querySelector(".selected-color");
-    const whatsappButton = document.getElementById("whatsapp-product");
+        const disponibilidad = window.disponibilidadColores || {};
+        const selectedColorText = document.querySelector(".selected-color");
+        const whatsappButton = document.getElementById("whatsapp-product");
 
-    const whatsappNumber = "5355300075";
+        const whatsappNumber = "5355300075";
 
-    let selectedColor = "";
+        let selectedColor = "";
 
-    function actualizarWhatsApp() {
-        if (!whatsappButton) return;
+        function actualizarWhatsApp() {
+            if (!whatsappButton) return;
 
-        const nombre = document.querySelector(".detail-info h1")?.textContent.trim() || "este producto";
-        const precio = document.querySelector(".detail-price")?.textContent.trim() || "";
-        const talla = document.querySelector(".size-selected")?.textContent.trim() || "Por confirmar";
+            const nombre =
+                document.querySelector(".detail-info h1")?.textContent.trim() ||
+                "este producto";
 
-        const mensaje =
-            "Hola, estoy interesada en " + nombre + ". " +
-            "Precio: " + precio + ". " +
-            "Talla: " + talla + ". " +
-            "Color: " + (selectedColor || "por confirmar") +
-            ". ¿Está disponible?";
+            const precio =
+                document.querySelector(".detail-price")?.textContent.trim() || "";
 
-        whatsappButton.href =
-            "https://wa.me/" + whatsappNumber +
-            "?text=" + encodeURIComponent(mensaje);
-    }
+            const talla =
+                document.querySelector(".size-selected")?.textContent.trim() ||
+                "Por confirmar";
 
-    colorButtons.forEach((button) => {
-        const color = button.dataset.color;
-        const disponible = disponibilidad[color] === true;
+            const mensaje =
+                "Hola, estoy interesada en " + nombre + ". " +
+                "Precio: " + precio + ". " +
+                "Talla: " + talla + ". " +
+                "Color: " + (selectedColor || "por confirmar") +
+                ". ¿Está disponible?";
 
-        if (!disponible) {
-            button.classList.add("is-sold-out");
-            button.setAttribute("aria-disabled", "true");
-            button.setAttribute("aria-label", color + " - Agotado");
-            button.title = color + " - Agotado";
-        } else {
-            button.setAttribute("aria-disabled", "false");
+            whatsappButton.href =
+                "https://wa.me/" + whatsappNumber +
+                "?text=" + encodeURIComponent(mensaje);
         }
 
-        button.setAttribute("aria-pressed", "false");
+        colorButtons.forEach((button) => {
+            const color = button.dataset.color;
+            const disponible = disponibilidad[color] === true;
 
-        button.addEventListener("click", () => {
+            button.classList.toggle("is-sold-out", !disponible);
+            button.setAttribute("aria-disabled", String(!disponible));
+            button.setAttribute("aria-pressed", "false");
 
-            // No permitir seleccionar colores agotados.
             if (!disponible) {
-                if (selectedColorText) {
-                    selectedColorText.textContent = color + " - Agotado";
+                button.title = color + " - Agotado";
+                button.setAttribute("aria-label", color + " - Agotado");
+            } else {
+                button.title = color;
+                button.setAttribute("aria-label", color);
+            }
+
+            button.addEventListener("click", () => {
+                if (!disponible) {
+                    if (selectedColorText) {
+                        selectedColorText.textContent = color + " - Agotado";
+                    }
+                    return;
                 }
-                return;
-            }
 
-            colorButtons.forEach((item) => {
-                item.classList.remove("is-selected");
-                item.setAttribute("aria-pressed", "false");
+                colorButtons.forEach((item) => {
+                    item.classList.remove("is-selected");
+                    item.setAttribute("aria-pressed", "false");
+                });
+
+                button.classList.add("is-selected");
+                button.setAttribute("aria-pressed", "true");
+
+                selectedColor = color;
+
+                if (selectedColorText) {
+                    selectedColorText.textContent =
+                        "Color seleccionado: " + color;
+                }
+
+                actualizarWhatsApp();
             });
-
-            button.classList.add("is-selected");
-            button.setAttribute("aria-pressed", "true");
-
-            selectedColor = color;
-
-            if (selectedColorText) {
-                selectedColorText.textContent = "Color seleccionado: " + color;
-            }
-
-            actualizarWhatsApp();
         });
-    });
 
-    actualizarWhatsApp();
+        actualizarWhatsApp();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", iniciarVariantes);
+    } else {
+        iniciarVariantes();
+    }
 })();
