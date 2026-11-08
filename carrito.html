@@ -200,7 +200,7 @@
                     return (
                         `- ${producto.nombre}${detalles} | ` +
                         `Cantidad: ${producto.cantidad} | ` +
-                        ${formatoPrecio(producto.precio * producto.cantidad)} USD
+                        `${formatoPrecio(producto.precio * producto.cantidad)} USD`
                     );
                 });
 
@@ -215,7 +215,7 @@
                     "",
                     ...lineas,
                     "",
-                    Total estimado: ${formatoPrecio(total)} USD,
+                    `Total estimado: ${formatoPrecio(total)} USD`,
                     "",
                     "¿Podrían confirmarme la disponibilidad?"
                 ].join("\n");
