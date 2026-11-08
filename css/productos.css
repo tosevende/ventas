@@ -514,3 +514,24 @@ opacity: 0.75;
 .product-detail-page .whatsapp-disabled:hover {
 background: #999;
 }
+
+/* COLORES AGOTADOS */
+.color-circle.is-sold-out {
+    position: relative;
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(25%);
+}
+
+.color-circle.is-sold-out::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    width: 130%;
+    height: 2px;
+    background: #555;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    pointer-events: none;
+}
