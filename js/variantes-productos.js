@@ -1,102 +1,112 @@
-const CART_KEY = "tosevende_carrito";
+(function () {
+    const colorButtons = document.querySelectorAll(".color-circle");
 
-function obtenerCarrito() {
-    try {
-        const datos = JSON.parse(localStorage.getItem(CART_KEY));
-        return Array.isArray(datos) ? datos : [];
-    } catch {
-        return [];
-    }
-}
+    if (!colorButtons.length) return;
 
-function guardarCarrito(carrito) {
-    localStorage.setItem(CART_KEY, JSON.stringify(carrito));
-    actualizarContadorCarrito();
-}
+    const disponibilidad = window.disponibilidadColores || {};
+    const selectedColorText = document.querySelector(".selected-color");
+    const addButton = document.getElementById("add-product-to-cart");
 
-function actualizarContadorCarrito() {
-    const cantidad = obtenerCarrito().reduce(
-        (total, producto) => total + producto.cantidad,
-        0
-    );
+    let selectedColor = "";
 
-    document.querySelectorAll("[data-cart-count]").forEach(elemento => {
-        elemento.textContent = cantidad;
-        elemento.hidden = cantidad === 0;
+    // Configurar colores disponibles y agotados
+    colorButtons.forEach(button => {
+        const color = button.dataset.color;
+        const disponible = disponibilidad[color] === true;
+
+        button.setAttribute("aria-pressed", "false");
+
+        if (!disponible) {
+            button.classList.add("is-sold-out");
+            button.setAttribute("aria-disabled", "true");
+            button.setAttribute("aria-label", color + " - Agotado");
+            button.title = color + " - Agotado";
+        } else {
+            button.classList.remove("is-sold-out");
+            button.setAttribute("aria-disabled", "false");
+        }
+
+        button.addEventListener("click", () => {
+
+            if (!disponible) {
+                if (selectedColorText) {
+                    selectedColorText.textContent = color + " - Agotado";
+                }
+                return;
+            }
+
+            colorButtons.forEach(item => {
+                item.classList.remove("is-selected");
+                item.setAttribute("aria-pressed", "false");
+            });
+
+            button.classList.add("is-selected");
+            button.setAttribute("aria-pressed", "true");
+
+            selectedColor = color;
+
+            if (selectedColorText) {
+                selectedColorText.textContent =
+                    "Color seleccionado: " + color;
+            }
+
+            if (addButton) {
+                addButton.disabled = false;
+            }
+        });
     });
-}
 
-function mostrarAviso(mensaje) {
-    let aviso = document.getElementById("cart-notice");
+    // Conectar el botón de añadir al carrito
+    if (addButton) {
+        addButton.addEventListener("click", () => {
 
-    if (!aviso) {
-        aviso = document.createElement("div");
-        aviso.id = "cart-notice";
-        aviso.className = "cart-notice";
-        aviso.setAttribute("role", "status");
-        document.body.appendChild(aviso);
-    }
+            if (!selectedColor) {
+                window.mostrarAviso("Selecciona un color disponible.");
+                return;
+            }
 
-    aviso.textContent = mensaje;
-    aviso.classList.add("is-visible");
+            if (typeof window.agregarAlCarrito !== "function") {
+                window.mostrarAviso("No se pudo conectar con el carrito.");
+                return;
+            }
 
-    clearTimeout(aviso._timer);
+            const nombre = document.querySelector(
+                ".detail-info h1"
+            ).textContent.trim();
 
-    aviso._timer = setTimeout(() => {
-        aviso.classList.remove("is-visible");
-    }, 2500);
-}
+            const precioTexto = document.querySelector(
+                ".detail-price"
+            ).textContent;
 
-function agregarAlCarrito(producto) {
-    const carrito = obtenerCarrito();
-    const existente = carrito.find(item => item.id === producto.id);
+            const precio = Number(
+                precioTexto.replace(",", ".").match(/\d+(\.\d+)?/)?.[0]
+            );
 
-    if (existente) {
-        existente.cantidad += 1;
-    } else {
-        carrito.push({
-            ...producto,
-            cantidad: 1
+            const talla = document.querySelector(
+                ".size-selected"
+            )?.textContent.trim() || "";
+
+            const productoId = addButton.dataset.productId || "producto";
+
+            if (!nombre || !talla || !Number.isFinite(precio)) {
+                window.mostrarAviso("No se pudo añadir este producto.");
+                return;
+            }
+
+            const id = [
+                productoId,
+                selectedColor,
+                talla
+            ].join("-").toLowerCase();
+
+            window.agregarAlCarrito({
+                id: id,
+                nombre: nombre,
+                precio: precio,
+                color: selectedColor,
+                talla: talla
+            });
         });
     }
 
-    guardarCarrito(carrito);
-    mostrarAviso("¡Producto añadido al carrito!");
-}
-
-// Botones de productos sin variantes
-document.querySelectorAll("[data-add-to-cart]").forEach(boton => {
-    boton.addEventListener("click", () => {
-        if (boton.dataset.available === "false") {
-            mostrarAviso("Este producto está agotado.");
-            return;
-        }
-
-        const producto = {
-            id: boton.dataset.id,
-            nombre: boton.dataset.name,
-            precio: Number(boton.dataset.price)
-        };
-
-        if (
-            !producto.id ||
-            !producto.nombre ||
-            !Number.isFinite(producto.precio) ||
-            producto.precio < 0
-        ) {
-            mostrarAviso("No se pudo añadir este producto.");
-            return;
-        }
-
-        agregarAlCarrito(producto);
-    });
-});
-
-// Funciones disponibles para los demás archivos
-window.obtenerCarrito = obtenerCarrito;
-window.guardarCarrito = guardarCarrito;
-window.actualizarContadorCarrito = actualizarContadorCarrito;
-window.mostrarAviso = mostrarAviso;
-window.agregarAlCarrito = agregarAlCarrito;
-
-actualizarContadorCarrito();
+})();
