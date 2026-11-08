@@ -1,92 +1,102 @@
-(function () {
-    function iniciarVariantes() {
-        const colorButtons = document.querySelectorAll(".color-circle");
+const CART_KEY = "tosevende_carrito";
 
-        if (!colorButtons.length) return;
+function obtenerCarrito() {
+    try {
+        const datos = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(datos) ? datos : [];
+    } catch {
+        return [];
+    }
+}
 
-        const disponibilidad = window.disponibilidadColores || {};
-        const selectedColorText = document.querySelector(".selected-color");
-        const whatsappButton = document.getElementById("whatsapp-product");
+function guardarCarrito(carrito) {
+    localStorage.setItem(CART_KEY, JSON.stringify(carrito));
+    actualizarContadorCarrito();
+}
 
-        const whatsappNumber = "5355300075";
+function actualizarContadorCarrito() {
+    const cantidad = obtenerCarrito().reduce(
+        (total, producto) => total + producto.cantidad,
+        0
+    );
 
-        let selectedColor = "";
+    document.querySelectorAll("[data-cart-count]").forEach(elemento => {
+        elemento.textContent = cantidad;
+        elemento.hidden = cantidad === 0;
+    });
+}
 
-        function actualizarWhatsApp() {
-            if (!whatsappButton) return;
+function mostrarAviso(mensaje) {
+    let aviso = document.getElementById("cart-notice");
 
-            const nombre =
-                document.querySelector(".detail-info h1")?.textContent.trim() ||
-                "este producto";
+    if (!aviso) {
+        aviso = document.createElement("div");
+        aviso.id = "cart-notice";
+        aviso.className = "cart-notice";
+        aviso.setAttribute("role", "status");
+        document.body.appendChild(aviso);
+    }
 
-            const precio =
-                document.querySelector(".detail-price")?.textContent.trim() || "";
+    aviso.textContent = mensaje;
+    aviso.classList.add("is-visible");
 
-            const talla =
-                document.querySelector(".size-selected")?.textContent.trim() ||
-                "Por confirmar";
+    clearTimeout(aviso._timer);
 
-            const mensaje =
-                "Hola, estoy interesada en " + nombre + ". " +
-                "Precio: " + precio + ". " +
-                "Talla: " + talla + ". " +
-                "Color: " + (selectedColor || "por confirmar") +
-                ". ¿Está disponible?";
+    aviso._timer = setTimeout(() => {
+        aviso.classList.remove("is-visible");
+    }, 2500);
+}
 
-            whatsappButton.href =
-                "https://wa.me/" + whatsappNumber +
-                "?text=" + encodeURIComponent(mensaje);
+function agregarAlCarrito(producto) {
+    const carrito = obtenerCarrito();
+    const existente = carrito.find(item => item.id === producto.id);
+
+    if (existente) {
+        existente.cantidad += 1;
+    } else {
+        carrito.push({
+            ...producto,
+            cantidad: 1
+        });
+    }
+
+    guardarCarrito(carrito);
+    mostrarAviso("¡Producto añadido al carrito!");
+}
+
+// Botones de productos sin variantes
+document.querySelectorAll("[data-add-to-cart]").forEach(boton => {
+    boton.addEventListener("click", () => {
+        if (boton.dataset.available === "false") {
+            mostrarAviso("Este producto está agotado.");
+            return;
         }
 
-        colorButtons.forEach((button) => {
-            const color = button.dataset.color;
-            const disponible = disponibilidad[color] === true;
+        const producto = {
+            id: boton.dataset.id,
+            nombre: boton.dataset.name,
+            precio: Number(boton.dataset.price)
+        };
 
-            button.classList.toggle("is-sold-out", !disponible);
-            button.setAttribute("aria-disabled", String(!disponible));
-            button.setAttribute("aria-pressed", "false");
+        if (
+            !producto.id ||
+            !producto.nombre ||
+            !Number.isFinite(producto.precio) ||
+            producto.precio < 0
+        ) {
+            mostrarAviso("No se pudo añadir este producto.");
+            return;
+        }
 
-            if (!disponible) {
-                button.title = color + " - Agotado";
-                button.setAttribute("aria-label", color + " - Agotado");
-            } else {
-                button.title = color;
-                button.setAttribute("aria-label", color);
-            }
+        agregarAlCarrito(producto);
+    });
+});
 
-            button.addEventListener("click", () => {
-                if (!disponible) {
-                    if (selectedColorText) {
-                        selectedColorText.textContent = color + " - Agotado";
-                    }
-                    return;
-                }
+// Funciones disponibles para los demás archivos
+window.obtenerCarrito = obtenerCarrito;
+window.guardarCarrito = guardarCarrito;
+window.actualizarContadorCarrito = actualizarContadorCarrito;
+window.mostrarAviso = mostrarAviso;
+window.agregarAlCarrito = agregarAlCarrito;
 
-                colorButtons.forEach((item) => {
-                    item.classList.remove("is-selected");
-                    item.setAttribute("aria-pressed", "false");
-                });
-
-                button.classList.add("is-selected");
-                button.setAttribute("aria-pressed", "true");
-
-                selectedColor = color;
-
-                if (selectedColorText) {
-                    selectedColorText.textContent =
-                        "Color seleccionado: " + color;
-                }
-
-                actualizarWhatsApp();
-            });
-        });
-
-        actualizarWhatsApp();
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", iniciarVariantes);
-    } else {
-        iniciarVariantes();
-    }
-})();
+actualizarContadorCarrito();
