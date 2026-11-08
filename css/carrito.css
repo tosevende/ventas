@@ -144,3 +144,10 @@
 .cart-button-secondary:hover {
     background: #5f5f5f;
 }
+
+/* DETALLES DE LAS VARIANTES EN EL CARRITO */
+.cart-item-variant {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+}
