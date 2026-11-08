@@ -8,11 +8,11 @@
     <meta name="description" content="Tops deportivos espalda cruzada. Consulta colores, talla y disponibilidad en TO’ SE VENDE.">
 
     <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
 </head>
 
 <body class="product-detail-page">
 
-    <!-- CABECERA -->
     <header class="detail-header">
         <div class="detail-container detail-header-inner">
 
@@ -28,12 +28,10 @@
         </div>
     </header>
 
-
     <main class="detail-container">
 
         <section class="product-detail">
 
-            <!-- FOTO DEL PRODUCTO -->
             <div class="detail-gallery">
                 <img
                     src="../img/tops-espalda.jpg"
@@ -42,8 +40,6 @@
                 >
             </div>
 
-
-            <!-- INFORMACIÓN DEL PRODUCTO -->
             <div class="detail-info">
 
                 <p class="detail-eyebrow">ROPA DEPORTIVA</p>
@@ -52,93 +48,54 @@
 
                 <p class="detail-price">6 USD</p>
 
-                <!-- COLORES -->
                 <div class="detail-option">
                     <h2>Colores disponibles</h2>
 
                     <p class="selected-color">
-                        Selecciona un color para consultar
+                        Selecciona un color para añadir al carrito
                     </p>
 
                     <div class="color-options">
 
-                        <button
-                            type="button"
-                            class="color-circle color-amarillo-mostaza"
+                        <button type="button" class="color-circle color-amarillo-mostaza"
                             data-color="Amarillo Mostaza"
-                            aria-label="Amarillo Mostaza"
-                            title="Amarillo Mostaza"
-                        ></button>
+                            aria-label="Amarillo Mostaza" title="Amarillo Mostaza"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-rosa-empolvado"
+                        <button type="button" class="color-circle color-rosa-empolvado"
                             data-color="Rosa Empolvado"
-                            aria-label="Rosa Empolvado"
-                            title="Rosa Empolvado"
-                        ></button>
+                            aria-label="Rosa Empolvado" title="Rosa Empolvado"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-beige-topo"
-                                data-color="Beige Topo"
-                            aria-label="Beige Topo"
-                            title="Beige Topo"
-                        ></button>
+                        <button type="button" class="color-circle color-beige-topo"
+                            data-color="Beige Topo"
+                            aria-label="Beige Topo" title="Beige Topo"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-rosa-malva"
+                        <button type="button" class="color-circle color-rosa-malva"
                             data-color="Rosa Malva"
-                            aria-label="Rosa Malva"
-                            title="Rosa Malva"
-                        ></button>
-                        
-                        <button
-                            type="button"
-                            class="color-circle color-azul-grisáceo"
+                            aria-label="Rosa Malva" title="Rosa Malva"></button>
+
+                        <button type="button" class="color-circle color-azul-grisáceo"
                             data-color="Azul Grisáceo"
-                            aria-label="Azul Grisáceo"
-                            title="Azul Grisáceo"
-                        ></button>
+                            aria-label="Azul Grisáceo" title="Azul Grisáceo"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-blanco"
+                        <button type="button" class="color-circle color-blanco"
                             data-color="Blanco"
-                            aria-label="Blanco"
-                            title="Blanco"
-                        ></button>
+                            aria-label="Blanco" title="Blanco"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-verde-bosque"
+                        <button type="button" class="color-circle color-verde-bosque"
                             data-color="Verde Bosque"
-                            aria-label="Verde Bosque"
-                            title="Verde Bosque"
-                        ></button>
+                            aria-label="Verde Bosque" title="Verde Bosque"></button>
 
-                        <button
-                            type="button"
-                            class="color-circle color-marron-oscuro"
+                        <button type="button" class="color-circle color-marron-oscuro"
                             data-color="Marrón Oscuro"
-                            aria-label="Marrón Oscuro"
-                            title="Marrón Oscuro"
-                        ></button>
-                        
-                        <button
-                            type="button"
-                            class="color-circle color-negro"
+                            aria-label="Marrón Oscuro" title="Marrón Oscuro"></button>
+
+                        <button type="button" class="color-circle color-negro"
                             data-color="Negro"
-                            aria-label="Negro"
-                            title="Negro"
-                        ></button>
+                            aria-label="Negro" title="Negro"></button>
 
                     </div>
                 </div>
 
-
-                <!-- TALLA -->
                 <div class="detail-option">
                     <h2>Talla disponible</h2>
 
@@ -147,17 +104,14 @@
                     </div>
                 </div>
 
-
-                <!-- WHATSAPP -->
-                <a
-                    href="#"
-                    class="detail-whatsapp"
-                    id="whatsapp-product"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    type="button"
+                    class="detail-whatsapp detail-add-cart"
+                    id="add-product-to-cart"
+                    disabled
                 >
-                    Consultar por WhatsApp
-                </a>
+                    Añadir al carrito
+                </button>
 
             </div>
 
@@ -165,19 +119,16 @@
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
-        <footer class="gym-footer">
-            <div class="gym-container">
-                <p><strong>TO’ SE VENDE</strong></p>
-                <p>Tu próxima compra puede estar aquí.</p>
-                <p><a href="../index.html">Volver a la página principal</a></p>
-                <p>© 2026 TO’ SE VENDE</p>
-            </div>
-        </footer>
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p><a href="../index.html">Volver a la página principal</a></p>
+            <p>©️ 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
 
-    <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
     <script>
-        //DISPONIBILIDAD DE COLORES
         window.disponibilidadColores = {
             "Amarillo Mostaza": true,
             "Rosa Empolvado": false,
@@ -190,6 +141,9 @@
             "Negro": false
         };
     </script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
     <script src="../js/variantes-productos.js"></script>
 
 </body>
