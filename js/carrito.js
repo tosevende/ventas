@@ -97,5 +97,6 @@ window.obtenerCarrito = obtenerCarrito;
 window.guardarCarrito = guardarCarrito;
 window.actualizarContadorCarrito = actualizarContadorCarrito;
 window.mostrarAviso = mostrarAviso;
+window.agregarAlCarrito = agregarAlCarrito;
 
 actualizarContadorCarrito();
