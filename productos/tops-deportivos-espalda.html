@@ -189,48 +189,8 @@
             "Marrón Oscuro": false,
             "Negro": false
         };
-        
-        const colorButtons = document.querySelectorAll(".color-circle");
-        const selectedColorText = document.querySelector(".selected-color");
-        const whatsappButton = document.getElementById("whatsapp-product");
-
-        let selectedColor = "";
-
-        // Sustituye este número por el WhatsApp de tu negocio.
-        // Incluye el código del país, sin +, espacios ni guiones.
-        const whatsappNumber = "5355300075";
-
-        function updateWhatsApp() {
-            const message =
-                "Hola, estoy interesada en los tops deportivos de espalda cruzada. " +
-                "Precio: 6 USD. Talla: S. " +
-                "Color: " + (selectedColor || "por confirmar") +
-                ". ¿Está disponible?";
-
-            whatsappButton.href =
-                "https://wa.me/" + whatsappNumber +
-                "?text=" + encodeURIComponent(message);
-        }
-
-        colorButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                colorButtons.forEach((item) => {
-                    item.classList.remove("is-selected");
-                    item.removeAttribute("aria-pressed");
-                });
-
-                button.classList.add("is-selected");
-                button.setAttribute("aria-pressed", "true");
-
-                selectedColor = button.dataset.color;
-                selectedColorText.textContent = "Color seleccionado: " + selectedColor;
-
-                updateWhatsApp();
-            });
-        });
-
-        updateWhatsApp();
     </script>
+    <script src="../js/variantes-producto.js"></script>
 
 </body>
 </html>
