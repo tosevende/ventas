@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +8,7 @@
     <meta name="description" content="Licras cortas deportivas cintura alta. Consulta colores, talla y disponibilidad en TO’ SE VENDE.">
 
     <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
 </head>
 
 <body class="product-detail-page">
@@ -117,16 +117,16 @@
                 </div>
 
 
-                <!-- WHATSAPP -->
-                <a
-                    href="#"
-                    class="detail-whatsapp"
-                    id="whatsapp-product"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <!-- Añadir al carrito -->
+               <button
+                    type="button"
+                    class="detail-whatsapp detail-add-cart"
+                    id="add-product-to-cart"
+                    data-product-id="licras-cortas"
+                    disabled
                 >
-                    Consultar por WhatsApp
-                </a>
+                    Añadir al carrito
+                </button>
 
             </div>
 
@@ -146,49 +146,20 @@
     </footer>
 
 
-    <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
+    <!-- SELECCIÓN DE COLOR Y AGREGAR AL CARRITO -->
     <script>
-        const colorButtons = document.querySelectorAll(".color-circle");
-        const selectedColorText = document.querySelector(".selected-color");
-        const whatsappButton = document.getElementById("whatsapp-product");
-
-        let selectedColor = "";
-
-        // Sustituye este número por el WhatsApp de tu negocio.
-        // Incluye el código del país, sin +, espacios ni guiones.
-        const whatsappNumber = "5355300075";
-
-        function updateWhatsApp() {
-            const message =
-                "Hola, estoy interesada en las licras cortas deportivas de cintura alta. " +
-                "Precio: 9 USD. Talla: S. " +
-                "Color: " + (selectedColor || "por confirmar") +
-                ". ¿Está disponible?";
-
-            whatsappButton.href =
-                "https://wa.me/" + whatsappNumber +
-                "?text=" + encodeURIComponent(message);
-        }
-
-        colorButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                colorButtons.forEach((item) => {
-                    item.classList.remove("is-selected");
-                    item.removeAttribute("aria-pressed");
-                });
-
-                button.classList.add("is-selected");
-                button.setAttribute("aria-pressed", "true");
-
-                selectedColor = button.dataset.color;
-                selectedColorText.textContent = "Color seleccionado: " + selectedColor;
-
-                updateWhatsApp();
-            });
-        });
-
-        updateWhatsApp();
+        window.disponibilidadColores = {
+            "Rosa": true,
+            "Verde Azulado": true,
+            "Azul Grisáceo": true,
+            "Gris Oscuro": true,
+            "Negro": true
+        };
     </script>
+    
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
+    <script src="../js/variantes-productos.js"></script>
 
 </body>
 </html>
