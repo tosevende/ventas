@@ -143,7 +143,7 @@
                     <h2>Talla disponible</h2>
 
                     <div class="size-options">
-                        <span class="size-selected">S</span>
+                        <span class="size-selected">M</span>
                     </div>
                 </div>
 
@@ -177,6 +177,19 @@
 
     <!-- SELECCIÓN DE COLOR Y MENSAJE DE WHATSAPP -->
     <script>
+        //DISPONIBILIDAD DE COLORES
+        const disponibilidadColores = {
+            "Amarillo Mostaza": true,
+            "Rosa Empolvado": false,
+            "Beige Topo": false,
+            "Rosa Malva": true,
+            "Azul Grisáceo": true,
+            "Blanco": true,
+            "Verde Bosque": true,
+            "Marrón Oscuro": false,
+            "Negro": false
+        };
+        
         const colorButtons = document.querySelectorAll(".color-circle");
         const selectedColorText = document.querySelector(".selected-color");
         const whatsappButton = document.getElementById("whatsapp-product");
