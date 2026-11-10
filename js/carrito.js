@@ -75,7 +75,10 @@ document.querySelectorAll("[data-add-to-cart]").forEach(boton => {
         const producto = {
             id: boton.dataset.id,
             nombre: boton.dataset.name,
-            precio: Number(boton.dataset.price)
+            precio: Number(boton.dataset.price),
+            imagen: boton.dataset.image
+                ? new URL(boton.dataset.image, window.location.href).href
+                : ""
         };
 
         if (
