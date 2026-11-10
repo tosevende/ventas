@@ -177,3 +177,20 @@
     background: #f7f3ed;
     transform: translateX(-2px);
 }
+
+/* ENCABEZADO DEL CARRITO */
+.cart-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.cart-heading h1 {
+    margin: 0;
+}
+
+.cart-back {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
