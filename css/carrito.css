@@ -13,8 +13,9 @@
 
 .cart-item {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 14px;
+    grid-template-columns: 85px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
     padding: 20px;
     border: 1px solid #e6e0d8;
     border-radius: 12px;
@@ -125,9 +126,22 @@
     .cart-page {
         padding-top: 25px;
     }
-
+    
     .cart-item {
-        padding: 15px;
+        grid-template-columns: 68px minmax(0, 1fr);
+        gap: 12px;
+            padding: 15px;
+        
+    }
+
+    .cart-item-image {
+        width: 68px;
+        height: 68px;
+    }
+    
+    .cart-item-subtotal {
+        grid-column: 2;
+        justify-self: start;
     }
 }
 
@@ -189,4 +203,37 @@
 .cart-back {
     flex-shrink: 0;
     margin-bottom: 0;
+}
+
+/* IMÁGENES DE LOS PRODUCTOS EN EL CARRITO */
+.cart-item-image {
+    width: 85px;
+    height: 85px;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #f7f3ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cart-item-image span {
+    color: #888;
+    font-size: 11px;
+}
+
+.cart-item-info {
+    min-width: 0;
+}
+
+.cart-item-subtotal {
+    white-space: nowrap;
+    align-self: start;
 }
