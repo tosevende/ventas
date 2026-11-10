@@ -237,3 +237,27 @@
     white-space: nowrap;
     align-self: start;
 }
+
+/* MEJORAR SEPARACIÓN ENTRE FOTO Y TEXTO EN MÓVILES */
+@media (max-width: 500px) {
+
+    .cart-item {
+        grid-template-columns: 60px minmax(0, 1fr);
+        column-gap: 18px;
+    }
+
+    .cart-item-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart-item-info {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .cart-item-info h2 {
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+}
