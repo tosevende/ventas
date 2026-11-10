@@ -117,59 +117,73 @@
                 <div class="cart-list">
 
                     ${carrito.map(producto => `
-                        <article class="cart-item">
-
-                            <div>
-                                <h2>${escaparHTML(producto.nombre)}</h2>
-
-                                ${producto.color ? `
-                                    <p class="cart-item-variant">
-                                        Color: ${escaparHTML(producto.color)}
-                                    </p>
-                                ` : ""}
-
-                                ${producto.talla ? `
-                                    <p class="cart-item-variant">
-                                        Talla: ${escaparHTML(producto.talla)}
-                                    </p>
-                                ` : ""}
-
-                                <p class="cart-item-price">
-                                    ${formatoPrecio(producto.precio)} USD por unidad
+                    <article class="cart-item">
+                
+                        <div class="cart-item-image">
+                            ${producto.imagen ? `
+                                <img
+                                    src="${escaparHTML(producto.imagen)}"
+                                    alt="${escaparHTML(producto.nombre)}"
+                                    loading="lazy"
+                                >
+                            ` : `
+                                <span>Sin foto</span>
+                            `}
+                        </div>
+                
+                        <div class="cart-item-info">
+                
+                            <h2>${escaparHTML(producto.nombre)}</h2>
+                
+                            ${producto.color ? `
+                                <p class="cart-item-variant">
+                                    Color: ${escaparHTML(producto.color)}
                                 </p>
-
-                                <div class="cart-item-actions">
-
-                                    <div class="cart-quantity">
-                                        <button type="button"
-                                            data-action="minus"
-                                            data-id="${escaparHTML(producto.id)}"
-                                            aria-label="Reducir cantidad">−</button>
-
-                                        <span>${producto.cantidad}</span>
-
-                                        <button type="button"
-                                            data-action="plus"
-                                            data-id="${escaparHTML(producto.id)}"
-                                            aria-label="Aumentar cantidad">+</button>
-                                    </div>
-
+                            ` : ""}
+                
+                            ${producto.talla ? `
+                                <p class="cart-item-variant">
+                                    Talla: ${escaparHTML(producto.talla)}
+                                </p>
+                            ` : ""}
+                
+                            <p class="cart-item-price">
+                                ${formatoPrecio(producto.precio)} USD por unidad
+                            </p>
+                
+                            <div class="cart-item-actions">
+                
+                                <div class="cart-quantity">
                                     <button type="button"
-                                        class="cart-remove"
-                                        data-action="remove"
-                                        data-id="${escaparHTML(producto.id)}">
-                                        Eliminar
-                                    </button>
-
+                                        data-action="minus"
+                                        data-id="${escaparHTML(producto.id)}"
+                                        aria-label="Reducir cantidad">−</button>
+                
+                                    <span>${producto.cantidad}</span>
+                
+                                    <button type="button"
+                                        data-action="plus"
+                                        data-id="${escaparHTML(producto.id)}"
+                                        aria-label="Aumentar cantidad">+</button>
                                 </div>
+                
+                                <button type="button"
+                                    class="cart-remove"
+                                    data-action="remove"
+                                    data-id="${escaparHTML(producto.id)}">
+                                    Eliminar
+                                </button>
+                
                             </div>
-
-                            <strong>
-                                ${formatoPrecio(producto.precio * producto.cantidad)} USD
-                            </strong>
-
-                        </article>
-                    `).join("")}
+                
+                        </div>
+                
+                        <strong class="cart-item-subtotal">
+                            ${formatoPrecio(producto.precio * producto.cantidad)} USD
+                        </strong>
+                
+                    </article>
+                `).join("")}
 
                 </div>
 
