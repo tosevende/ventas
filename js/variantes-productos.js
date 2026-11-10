@@ -28,32 +28,43 @@
 
         button.addEventListener("click", () => {
 
-            if (!disponible) {
-                if (selectedColorText) {
-                    selectedColorText.textContent = color + " - Agotado";
-                }
-                return;
-            }
-
+        if (!disponible) {
+            selectedColor = "";
+    
             colorButtons.forEach(item => {
                 item.classList.remove("is-selected");
                 item.setAttribute("aria-pressed", "false");
             });
-
-            button.classList.add("is-selected");
-            button.setAttribute("aria-pressed", "true");
-
-            selectedColor = color;
-
+    
             if (selectedColorText) {
-                selectedColorText.textContent =
-                    "Color seleccionado: " + color;
+                selectedColorText.textContent = color + " - Agotado";
             }
-
+    
             if (addButton) {
-                addButton.disabled = false;
+                addButton.disabled = true;
             }
+    
+            return;
+        }
+    
+        colorButtons.forEach(item => {
+            item.classList.remove("is-selected");
+            item.setAttribute("aria-pressed", "false");
         });
+    
+        button.classList.add("is-selected");
+        button.setAttribute("aria-pressed", "true");
+    
+        selectedColor = color;
+    
+        if (selectedColorText) {
+            selectedColorText.textContent =
+                "Color seleccionado: " + color;
+        }
+    
+        if (addButton) {
+            addButton.disabled = false;
+        }
     });
 
     // Conectar el botón de añadir al carrito
