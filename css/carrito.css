@@ -151,3 +151,29 @@
     color: #666;
     font-size: 14px;
 }
+
+/* BOTÓN PARA VOLVER A LA PÁGINA ANTERIOR */
+.cart-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 18px;
+    border: 1px solid #e6e0d8;
+    border-radius: 50%;
+    color: #174a87;
+    background: #fff;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cart-back svg {
+    width: 19px;
+    height: 19px;
+}
+
+.cart-back:hover {
+    background: #f7f3ed;
+    transform: translateX(-2px);
+}
