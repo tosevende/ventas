@@ -6,11 +6,6 @@
     margin-bottom: 10px;
 }
 
-.cart-intro {
-    color: #666;
-    margin-bottom: 30px;
-}
-
 .cart-list {
     display: grid;
     gap: 16px;
@@ -184,6 +179,7 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 10px;
+    padding-left: 10px;
 }
 
 .cart-heading h1 {
