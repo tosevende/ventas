@@ -280,6 +280,25 @@
         });
 
         renderizarCarrito();
+
+        const backButton = document.getElementById("cart-back");
+
+    if (backButton) {
+        const paginaAnterior = document.referrer;
+
+        try {
+            const urlAnterior = new URL(paginaAnterior);
+
+            if (
+                urlAnterior.origin === window.location.origin &&
+                !urlAnterior.pathname.endsWith("/carrito.html")
+            ) {
+                backButton.href = paginaAnterior;
+            }
+        } catch {
+            backButton.href = "index.html";
+        }
+    }
     </script>
 
 </body>
