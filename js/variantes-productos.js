@@ -104,23 +104,31 @@
 
             const productoId = addButton.dataset.productId || "producto";
 
+            // Obtener la imagen principal del producto
+            const imagenElemento = document.querySelector(".detail-main-image");
+            
+            const imagen = imagenElemento
+                ? new URL(imagenElemento.getAttribute("src"), window.location.href).href
+                : "";
+            
             if (!nombre || !talla || !Number.isFinite(precio)) {
                 window.mostrarAviso("No se pudo añadir este producto.");
                 return;
             }
-
+            
             const id = [
                 productoId,
                 selectedColor,
                 talla
             ].join("-").toLowerCase();
-
+            
             window.agregarAlCarrito({
                 id: id,
                 nombre: nombre,
                 precio: precio,
                 color: selectedColor,
-                talla: talla
+                talla: talla,
+                imagen: imagen
             });
         });
     }
