@@ -26,46 +26,51 @@
             button.setAttribute("aria-disabled", "false");
         }
 
+        // Seleccionar color
         button.addEventListener("click", () => {
 
-        if (!disponible) {
-            selectedColor = "";
-    
+            // Si el color está agotado
+            if (!disponible) {
+                selectedColor = "";
+
+                colorButtons.forEach(item => {
+                    item.classList.remove("is-selected");
+                    item.setAttribute("aria-pressed", "false");
+                });
+
+                if (selectedColorText) {
+                    selectedColorText.textContent = color + " - Agotado";
+                }
+
+                if (addButton) {
+                    addButton.disabled = true;
+                }
+
+                return;
+            }
+
+            // Si el color está disponible
             colorButtons.forEach(item => {
                 item.classList.remove("is-selected");
                 item.setAttribute("aria-pressed", "false");
             });
-    
+
+            button.classList.add("is-selected");
+            button.setAttribute("aria-pressed", "true");
+
+            selectedColor = color;
+
             if (selectedColorText) {
-                selectedColorText.textContent = color + " - Agotado";
+                selectedColorText.textContent =
+                    "Color seleccionado: " + color;
             }
-    
+
             if (addButton) {
-                addButton.disabled = true;
+                addButton.disabled = false;
             }
-    
-            return;
-        }
-    
-        colorButtons.forEach(item => {
-            item.classList.remove("is-selected");
-            item.setAttribute("aria-pressed", "false");
         });
-    
-        button.classList.add("is-selected");
-        button.setAttribute("aria-pressed", "true");
-    
-        selectedColor = color;
-    
-        if (selectedColorText) {
-            selectedColorText.textContent =
-                "Color seleccionado: " + color;
-        }
-    
-        if (addButton) {
-            addButton.disabled = false;
-        }
-    });
+
+    }); // Cierre correcto del recorrido de colores
 
     // Conectar el botón de añadir al carrito
     if (addButton) {
