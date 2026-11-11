@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Casco Moto Transpirable| TO’ SE VENDE</title>
+
+    <meta name="description"
+          content="Casco Moto Transpirable – Protección y comodidad. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/bicicletas-accesorios.html">
+                ← Volver atrás
+            </a>
+
+        </div>
+    </header>
+
+    <main class="detail-container">
+
+        <!-- PRODUCTO -->
+        <section class="product-detail">
+
+            <!-- IMAGEN -->
+            <div class="detail-gallery">
+                <img
+                    class="detail-main-image"
+                    src="../img/casco-transpirable.jpg"
+                    alt="Casco Moto Transpirable – Protección y comodidad">
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">
+                    ACCESORIOS PARA AUTO Y MOTOCICLETA
+                </p>
+
+                <h1>Casco Moto Transpirable – Protección y comodidad</h1>
+
+                <!-- ESTADO: DISPONIBLE-->
+                <p class="detail-price">45 USD</p>
+                
+                
+                <!-- ESTADO: AGOTADO 
+                <p class="detail-price">45 USD</p>
+                <p class="sold-out-status">
+                    Agotado
+                </p>
+                -->
+                <p>
+                    Casco para motocicleta, diseño femenino. Ideal para moto y bicicleta.
+                </p>
+
+                <!-- VER MÁS DETALLES -->
+                <button
+                    type="button"
+                    class="detail-more-button"
+                    id="open-details"
+                    aria-haspopup="dialog"
+                    aria-controls="details-modal">
+                    Ver más detalles 
+                </button>
+
+                <!-- Carrito -->
+                <!-- ESTADO: DISPONIBLE-->
+                <button
+                    type="button"
+                    class="detail-whatsapp"
+                    data-add-to-cart
+                    data-id="casco-transpirable"
+                    data-name="Casco Moto Transpirable – Protección y comodidad"
+                    data-price="45"
+                    data-image="../img/casco-transpirable.jpg">
+                    Añadir al carrito
+                </button>
+
+                <!-- ESTADO: AGOTADO 
+                <button
+                    type="button"
+                    class="detail-whatsapp whatsapp-disabled"
+                    data-add-to-cart
+                    data-available="false"
+                    disabled>
+                    Agotado
+                </button>
+                -->  
+                
+                <p>
+                    Consulta la disponibilidad y coordina tu compra
+                    directamente con nosotros.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- VENTANA EMERGENTE CON LOS DETALLES -->
+    <div
+        class="details-modal"
+        id="details-modal"
+        aria-hidden="true">
+
+        <div
+            class="details-modal-backdrop"
+            data-close-modal>
+        </div>
+
+        <section
+            class="details-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1">
+
+            <button
+                type="button"
+                class="details-modal-close"
+                id="close-details"
+                aria-label="Cerrar detalles">
+                &times;
+            </button>
+
+            <p class="detail-eyebrow">INFORMACIÓN DEL PRODUCTO</p>
+
+            <h2 id="modal-title">
+                Casco Moto Transpirable – Protección y comodidad
+            </h2>
+
+            <p class="detail-price">45 USD</p>
+            
+            <!-- 
+            <p class="sold-out-status">
+                    Agotado
+            </p>
+            -->
+          
+            <div class="details-modal-body">
+
+                <h3>Características y Especificaciones</h3>
+                <ul>
+                    <li><strong>​Tipo:</strong> Casco para motocicleta, diseño femenino.</li>
+                    <li><strong>Diseño:</strong> Estilo moderno con detalles decorativos.</li>
+                    <li><strong>​Visor:</strong> Pantalla protectora frontal integrada.</li>
+                    <li><strong>​Ventilación:</strong> Sistema transpirable para mayor comodidad.</li>
+                    <li><strong>​Cierre:</strong> Correa ajustable con hebilla de seguridad.</li>
+                    <li><strong>​Material:</strong> Carcasa protectora con interior acolchado.</li>
+                    <li><strong>​Uso:</strong> Motocicletas y scooters.</li>
+                </ul>
+
+                   <p>​Certificado.</p>
+                
+            </div>
+
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>
+                <a href="../index.html">
+                    Volver a la página principal
+                </a>
+            </p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+    <!-- FUNCIONAMIENTO DE LA VENTANA -->
+    <script>
+        const modal = document.getElementById("details-modal");
+        const openButton = document.getElementById("open-details");
+        const closeButton = document.getElementById("close-details");
+
+        let previousFocus = null;
+
+        function openModal() {
+            previousFocus = document.activeElement;
+
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modal.querySelectorAll("[data-close-modal]").forEach(element => {
+            element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+                closeModal();
+            }
+        });
+    </script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
+
+</body>
+</html>
