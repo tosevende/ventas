@@ -39,7 +39,7 @@
             <div class="detail-gallery">
                 <img
                     class="detail-main-image"
-                    src="../img/soldadora-mig-300.jpg"
+                    src="../img/soldadora-wanse.jpg"
                     alt="Soldadora WANSE">
             </div>
 
@@ -87,7 +87,7 @@
                     data-id="soldadora-wanse"
                     data-name="Soldadora WANSE"
                     data-price="270"
-                    data-image="../img/soldadora-mig-300.jpg">
+                    data-image="../img/soldadora-wanse.jpg">
                     Añadir al carrito
                 </button>
 
