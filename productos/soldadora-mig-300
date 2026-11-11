@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soldadora WANSE | TO’ SE VENDE</title>
+
+    <meta name="description" content="Soldadora WANSE MIG-300. Consulta sus características, medidas y disponibilidad en TO’ SE VENDE.">
+
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/icono-carrito.css">
+</head>
+
+<body class="product-detail-page">
+
+    <!-- CABECERA -->
+    <header class="detail-header">
+        <div class="detail-container detail-header-inner">
+
+            <a class="detail-brand" href="../index.html">
+                <img src="../img/logo.jpeg" alt="Logo de TO’ SE VENDE">
+                <span>TO’ SE VENDE</span>
+            </a>
+
+            <a class="detail-back" href="../categorias/equipos.html">
+                ← Volver atrás
+            </a>
+
+        </div>
+    </header>
+
+    <main class="detail-container">
+
+        <!-- PRODUCTO -->
+        <section class="product-detail">
+
+            <!-- IMAGEN -->
+            <div class="detail-gallery">
+                <img
+                    class="detail-main-image"
+                    src="../img/soldadora-mig-300.jpg"
+                    alt="Soldadora WANSE">
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="detail-info">
+
+                <p class="detail-eyebrow">
+                    EQUIPOS Y HERRAMIENTAS
+                </p>
+
+                <h1>Soldadora WANSE</h1>
+
+                <!-- ESTADO: DISPONIBLE-->
+                <p class="detail-price">270 USD</p>
+                
+                <!-- ESTADO: AGOTADO 
+                <p class="detail-price">270 USD</p>
+                <p class="sold-out-status">
+                    Agotado
+                </p>
+                -->
+                
+                <p>
+                    Equipo de soldadura para trabajos de
+                                reparación y proyectos que requieran
+                                este tipo de herramienta.
+                </p>
+
+                <!-- VER MÁS DETALLES -->
+                <button
+                    type="button"
+                    class="detail-more-button"
+                    id="open-details"
+                    aria-haspopup="dialog"
+                    aria-controls="details-modal">
+                    Ver más detalles 
+                </button>
+
+                 <!-- Carrito -->
+                <!-- ESTADO: DISPONIBLE-->
+                <button
+                    type="button"
+                    class="detail-whatsapp"
+                    data-add-to-cart
+                    data-id="soldadora-wanse"
+                    data-name="Soldadora WANSE"
+                    data-price="270"
+                    data-image="../img/soldadora-mig-300.jpg">
+                    Añadir al carrito
+                </button>
+
+                <!-- ESTADO: AGOTADO 
+                <button
+                    type="button"
+                    class="detail-whatsapp whatsapp-disabled"
+                    data-add-to-cart
+                    data-available="false"
+                    disabled>
+                    Agotado
+                </button>
+                -->           
+                
+                <p>
+                    Consulta la disponibilidad y coordina tu compra
+                    directamente con nosotros.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- VENTANA EMERGENTE CON LOS DETALLES -->
+    <div
+        class="details-modal"
+        id="details-modal"
+        aria-hidden="true">
+
+        <div
+            class="details-modal-backdrop"
+            data-close-modal>
+        </div>
+
+        <section
+            class="details-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            tabindex="-1">
+
+            <button
+                type="button"
+                class="details-modal-close"
+                id="close-details"
+                aria-label="Cerrar detalles">
+                &times;
+            </button>
+
+            <p class="detail-eyebrow">INFORMACIÓN DEL PRODUCTO</p>
+
+            <h2 id="modal-title">
+                Soldadora WANSE
+            </h2>
+
+            <p class="detail-price">270 USD</p>
+
+            <!-- 
+            <p class="sold-out-status">
+                    Agotado
+            </p>
+            -->
+            
+            <div class="details-modal-body">
+
+                <h3>Características técnicas</h3>
+                <ul>
+                    <li><strong>Marca/Modelo:</strong> WANSE/MIG-300</li>
+                    <li><strong>Tecnología:</strong> Inverter IGBT</li>
+                    <li><strong>Voltaje:</strong> 110V / 220V (Bi-voltaje)</li>
+                    <li><strong>Amperaje máximo indicado:</strong> 300A</li>
+                    <li><strong>Procesos:</strong> MIG, MMA (electrodo) y TIG</li>
+                    <li><strong>Pantalla:</strong> Digital con regulación de corriente</li>
+                    <li><strong>Potencia anunciada:</strong> 3kW</li>
+                </ul>
+
+                <h3>Electrodos y materiales - Característica Especificación</h3>
+                <p>Electrodos compatibles: E6010, E6013, E7018 y otros</p>
+                <p>​Diámetros recomendados: (2,0 – 2,5 – 3,2 - 4mm*)</p>
+                <p>Alambre: MIG 0.8mm a 1.0mm</p>
+                <p>​Materiales Acero al carbono, hierro y acero inoxidable</p>
+
+                <h3>Accesorios incluidos</h3>
+                <ul>
+                    <li>Antocha MIG</li>
+                    <li>Pinza corta electrodos</li>
+                    <li>Pinza de masa</li>
+                    <li>Careta de protección</li>
+                    <li>Guantes</li>
+                    <li>Alambre tubullar</li>
+                    <li>Boquillas consumibles</li>
+                    <li>Correa de transporte</li>
+                </ul>
+
+                <h3>Datos de interés</h3>
+                <p>Sistema de proteción contra sobrecarga</p>
+                <p>Función Anti-Stick para facilitar el despegue del electrodo</p>
+                <p>Diseño portátil para trabajos de mantenimiento, herrería  reparaciones</p>
+                <p>Adecuada para uso doméstico  semiprofesional</p>
+              
+            </div>
+
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="gym-footer">
+        <div class="gym-container">
+            <p><strong>TO’ SE VENDE</strong></p>
+            <p>Tu próxima compra puede estar aquí.</p>
+            <p>
+                <a href="../index.html">
+                    Volver a la página principal
+                </a>
+            </p>
+            <p>© 2026 TO’ SE VENDE</p>
+        </div>
+    </footer>
+
+    <!-- FUNCIONAMIENTO DE LA VENTANA -->
+    <script>
+        const modal = document.getElementById("details-modal");
+        const openButton = document.getElementById("open-details");
+        const closeButton = document.getElementById("close-details");
+
+        let previousFocus = null;
+
+        function openModal() {
+            previousFocus = document.activeElement;
+
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modal.querySelectorAll("[data-close-modal]").forEach(element => {
+            element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("is-open")
+            ) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <script src="../js/carrito.js"></script>
+    <script src="../js/cabecera-carrito.js"></script>
+
+</body>
+</html>
