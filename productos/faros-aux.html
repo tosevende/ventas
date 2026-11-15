@@ -54,7 +54,7 @@
                 <h1>Par Luces Faros Auxiliares Lupa LED</h1>
 
                 <!-- ESTADO: DISPONIBLE-->
-                <p class="detail-price">16-30 USD</p>
+                <p class="detail-price" id="product-price">16 USD</p>
                 
                 
                 <!-- ESTADO: AGOTADO 
@@ -63,6 +63,33 @@
                     Agotado
                 </p>
                 -->
+                <div class="detail-option">
+                    <h2>Selecciona tu presentación</h2>
+                
+                    <div class="size-options">
+                
+                        <label class="package-option">
+                            <input
+                                type="radio"
+                                name="presentacion"
+                                value="2"
+                                checked
+                            >
+                            <span>2 focos — 16 USD</span>
+                        </label>
+                
+                        <label class="package-option">
+                            <input
+                                type="radio"
+                                name="presentacion"
+                                value="4"
+                            >
+                            <span>4 focos — 30 USD</span>
+                        </label>
+                
+                    </div>
+                </div>
+                
                 <p>
                     Par Luces Faros Auxiliares Lupa LED para mayor iluminación de tu vehículo, de fácil instalación, alta potencia, ideal para auto y motos. En 16 USD 
                     la pareja  los 4 en 30 USD
@@ -83,10 +110,11 @@
                 <button
                     type="button"
                     class="detail-whatsapp"
+                    id="add-faros-cart"
                     data-add-to-cart
-                    data-id="faros-aux"
-                    data-name="Par Luces Faros Auxiliares Lupa LED"
-                    data-price="16-30"
+                    data-id="faros-aux-2"
+                    data-name="Par Luces Faros Auxiliares Lupa LED - 2 focos"
+                    data-price="16"
                     data-image="../img/faros-aux.jpg">
                     Añadir al carrito
                 </button>
@@ -223,6 +251,39 @@
             ) {
                 closeModal();
             }
+        });
+    </script>
+
+    <script>
+        const opcionesPresentacion = document.querySelectorAll(
+            'input[name="presentacion"]'
+        );
+    
+        const precioProducto = document.getElementById("product-price");
+        const botonCarrito = document.getElementById("add-faros-cart");
+    
+        opcionesPresentacion.forEach(opcion => {
+            opcion.addEventListener("change", () => {
+    
+                if (opcion.value === "2") {
+                    precioProducto.textContent = "16 USD";
+    
+                    botonCarrito.dataset.id = "faros-aux-2";
+                    botonCarrito.dataset.name =
+                        "Par Luces Faros Auxiliares Lupa LED - 2 focos";
+                    botonCarrito.dataset.price = "16";
+                }
+    
+                if (opcion.value === "4") {
+                    precioProducto.textContent = "30 USD";
+    
+                    botonCarrito.dataset.id = "faros-aux-4";
+                    botonCarrito.dataset.name =
+                        "Par Luces Faros Auxiliares Lupa LED - 4 focos";
+                    botonCarrito.dataset.price = "30";
+                }
+    
+            });
         });
     </script>
     <script src="../js/carrito.js"></script>
